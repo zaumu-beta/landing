@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Zaumu design tokens — sampled from the Figma landing page design
+   (file RQIzpIKvNRsXHkme7ejbcO, node 5:2 "Zaumu Landing Page")
+   --------------------------------------------------------------- */
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Brand */
+  --color-brand: #bce641;        /* primary lime — CTAs, active nav, accents */
+  --color-brand-deep: #b0d83c;   /* lime used for the FOR BRANDS eyebrow    */
+  --color-brand-soft: #e9f4ce;   /* tinted lime — creator card, icon chips  */
+
+  /* Neutrals */
+  --color-ink: #202125;          /* page background on dark sections        */
+  --color-ink-soft: #2b2c31;     /* raised surfaces on dark sections        */
+
+  /* Section surfaces */
+  --color-cream: #f1eee7;        /* "Why Creators Join Zaumu"               */
+  --color-cream-light: #faf9f5;  /* "This is what brands see"               */
+  --color-lavender: #f1f0fa;     /* "Opportunities Start Here"              */
+  --color-lavender-soft: #ede9fb;/* brands CTA card                         */
+
+  /* Accents */
+  --color-violet: #7048e8;       /* brands CTA button                       */
+  --color-star: #f5a623;         /* rating stars                            */
+
+  /* Icon chip tints (feature cards) */
+  --color-chip-lime: #e8f5c8;
+  --color-chip-violet: #ede7fb;
+  --color-chip-amber: #fdebd3;
+  --color-chip-rose: #fbe0e6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Placeholder styling for image slots that still need their asset
+     exported out of Figma. Delete `.asset-slot` from an element once the
+     real file is dropped into /public/assets — see public/assets/README.md */
+  .asset-slot {
+    background-color: #e7e5e0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgb(0 0 0 / 0.035) 0 10px,
+        transparent 10px 20px
+      );
+    border: 1px dashed rgb(0 0 0 / 0.18);
+  }
+
+  .asset-slot-dark {
+    background-color: #34353b;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgb(255 255 255 / 0.05) 0 10px,
+        transparent 10px 20px
+      );
+    border: 1px dashed rgb(255 255 255 / 0.18);
+  }
+
+  /* Hide the alt text / broken-image glyph until the asset exists,
+     then let the real image cover the slot. */
+  .asset-slot img,
+  .asset-slot-dark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
