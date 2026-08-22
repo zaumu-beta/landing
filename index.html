@@ -7,7 +7,7 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/png" href="/icon-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-icon-180x180.png" />
-    <meta name="theme-color" content="#bce641" />
+    <meta name="theme-color" content="#a9e724" />
 
     <title>Zaumu — Where Africa's Creators Build Their Next Opportunity</title>
     <meta
@@ -25,35 +25,23 @@
     <script type="module" src="/src/main.ts"></script>
   </head>
 
-  <body class="bg-white text-ink">
-    <!-- ==================================================================
-         NAV  (Figma node 5:7)
-         ================================================================== -->
+  <body class="bg-white text-black">
+    <!-- ==============================================================
+         NAV  (PSD group "Nav Bar")
+         ============================================================== -->
     <header class="sticky top-0 z-50 w-full border-b border-black/5 bg-white/95 backdrop-blur">
       <nav class="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 lg:h-24 lg:px-[85px]">
-        <!-- Logo -->
         <a href="#" class="flex shrink-0 items-center" aria-label="Zaumu home">
-          <img
-            src="/logo-black.png"
-            alt="Zaumu — create, connect, collaborate"
-            width="440"
-            height="214"
-            class="h-10 w-auto lg:h-[46px]"
-          />
+          <img src="/logo-black.png" alt="Zaumu — create, connect, collaborate" width="440" height="214" class="h-10 w-auto lg:h-[46px]" />
         </a>
 
-        <!-- Desktop links -->
         <ul class="hidden items-center gap-8 text-[14px] font-semibold lg:flex xl:gap-11">
-          <li><a href="#creators" class="text-brand-deep transition hover:opacity-70">Creators</a></li>
+          <li><a href="#creators" class="text-brand transition hover:opacity-70">Creators</a></li>
           <li><a href="#brands" class="transition hover:opacity-60">Brands</a></li>
           <li><a href="#how-it-works" class="transition hover:opacity-60">How it Works</a></li>
           <li><a href="#pricing" class="transition hover:opacity-60">Pricing</a></li>
           <li>
-            <button
-              type="button"
-              class="flex items-center gap-1.5 transition hover:opacity-60"
-              aria-expanded="false"
-            >
+            <button type="button" class="flex items-center gap-1.5 transition hover:opacity-60" aria-expanded="false">
               Resources
               <svg class="size-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                 <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -62,18 +50,11 @@
           </li>
         </ul>
 
-        <!-- Desktop actions -->
         <div class="hidden items-center gap-7 lg:flex">
           <a href="#signin" class="text-[14px] font-semibold transition hover:opacity-60">Sign In</a>
-          <a
-            href="#join"
-            class="rounded-full bg-brand px-7 py-3 text-[14px] font-semibold text-ink transition hover:brightness-95"
-          >
-            Join Free
-          </a>
+          <a href="#join" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Join Free</a>
         </div>
 
-        <!-- Mobile toggle -->
         <button
           type="button"
           data-nav-toggle
@@ -89,205 +70,106 @@
         </button>
       </nav>
 
-      <!-- Mobile menu -->
       <div id="mobile-menu" data-nav-menu class="hidden border-t border-black/5 bg-white lg:hidden">
         <ul class="flex flex-col px-6 py-4 text-[15px] font-semibold">
-          <li><a href="#creators" class="block py-3 text-brand-deep">Creators</a></li>
+          <li><a href="#creators" class="block py-3 text-brand">Creators</a></li>
           <li><a href="#brands" class="block py-3">Brands</a></li>
           <li><a href="#how-it-works" class="block py-3">How it Works</a></li>
           <li><a href="#pricing" class="block py-3">Pricing</a></li>
           <li><a href="#resources" class="block py-3">Resources</a></li>
         </ul>
         <div class="flex items-center gap-3 border-t border-black/5 px-6 py-4">
-          <a href="#signin" class="flex-1 rounded-full border border-black/15 py-3 text-center text-[14px] font-semibold">Sign In</a>
-          <a href="#join" class="flex-1 rounded-full bg-brand py-3 text-center text-[14px] font-semibold">Join Free</a>
+          <a href="#signin" class="flex-1 rounded-[8px] border border-black/20 py-3 text-center text-[14px] font-semibold">Sign In</a>
+          <a href="#join" class="flex-1 rounded-[8px] bg-brand py-3 text-center text-[14px] font-semibold">Join Free</a>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- ================================================================
-           HERO  (Figma node 5:6 "Section 1")
-           ================================================================ -->
+      <!-- ============================================================
+           HERO  (PSD group "Section 1")
+           ============================================================ -->
       <section id="creators" class="bg-white">
         <div class="mx-auto grid max-w-[1440px] items-center gap-12 px-6 py-14 lg:grid-cols-[minmax(0,620px)_minmax(0,1fr)] lg:gap-10 lg:px-[78px] lg:py-[55px]">
-          <!-- Copy -->
           <div>
             <h1 class="text-[34px] font-bold leading-[1.2] sm:text-[42px] lg:whitespace-nowrap lg:text-[50px] lg:leading-[60px]">
-              Where Africa's<br />
-              Creators Build Their<br />
-              <span class="relative inline-block">
-                Next Opportunity.
-                <!-- hand-drawn underline accent from the design -->
-                <svg
-                  class="absolute -bottom-1 left-0 h-3 w-full text-brand"
-                  viewBox="0 0 300 12"
-                  preserveAspectRatio="none"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path d="M2 8c60-5 120-6 180-4s80 4 116 1" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
-                </svg>
-              </span>
+              Where Africa's<br class="hidden lg:inline" />
+              Creators Build Their<br class="hidden lg:inline" />
+              Next Opportunity.
             </h1>
 
-            <p class="mt-8 max-w-[490px] text-[15px] font-bold leading-[20px] lg:text-[16.667px]">
+            <!-- hand-drawn lime underline, PSD layer "Place Your Image Here (Double Click to Edit)" -->
+            <img src="/assets/hero-highlight.png" alt="" width="150" height="49" class="-mt-2 ml-1 block h-auto w-[150px]" />
+
+            <p class="mt-2 max-w-[490px] text-[15px] font-bold leading-[20px] lg:text-[16.667px]">
               Whether you're a photographer, filmmaker, designer, influencer or content
               creator, Zaumu helps you showcase your work, connect with brands, manage
               collaborations and grow your creative business, all in one platform.
             </p>
 
             <div class="mt-9 flex flex-wrap items-center gap-4 lg:mt-11 lg:gap-6">
-              <a
-                href="#join"
-                class="rounded-full bg-brand px-9 py-4 text-[14px] font-semibold text-ink transition hover:brightness-95"
-              >
-                Join as a Creator
-              </a>
-              <a
-                href="#brands"
-                class="rounded-full border border-black/15 bg-white px-9 py-4 text-[14px] font-semibold text-ink transition hover:bg-black/5"
-              >
-                I'm a Brand
-              </a>
+              <a href="#join" class="rounded-[8px] bg-brand px-9 py-4 text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
+              <a href="#brands" class="rounded-[8px] border border-black bg-white px-9 py-4 text-[14px] font-semibold text-black transition hover:bg-black/5">I'm a Brand</a>
             </div>
 
-            <!-- Social proof -->
             <div class="mt-10 flex items-center gap-5 lg:mt-14">
-              <!-- Avatar stack -->
-              <div class="flex -space-x-3">
-                <span class="asset-slot size-11 overflow-hidden rounded-full ring-2 ring-white">
-                  <img src="/assets/avatar-1.png" alt="" loading="lazy" />
-                </span>
-                <span class="asset-slot size-11 overflow-hidden rounded-full ring-2 ring-white">
-                  <img src="/assets/avatar-2.png" alt="" loading="lazy" />
-                </span>
-                <span class="asset-slot size-11 overflow-hidden rounded-full ring-2 ring-white">
-                  <img src="/assets/avatar-3.png" alt="" loading="lazy" />
-                </span>
-                <span class="asset-slot size-11 overflow-hidden rounded-full ring-2 ring-white">
-                  <img src="/assets/avatar-4.png" alt="" loading="lazy" />
-                </span>
-              </div>
-
+              <img src="/assets/profiles.png" alt="Zaumu creators" width="189" height="60" class="h-[44px] w-auto lg:h-[60px]" />
               <div>
-                <div class="flex gap-0.5 text-star" aria-label="Rated 5 out of 5">
-                  <svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-                  <svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-                  <svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-                  <svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-                  <svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
-                </div>
-                <p class="mt-1.5 text-[14px] font-semibold leading-[17px]">
+                <img src="/assets/five-star.png" alt="Rated 5 out of 5" width="88" height="15" class="h-[15px] w-auto" />
+                <p class="mt-2 text-[14px] font-semibold leading-[17px]">
                   Join Africa's fastest growing<br />creator network
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Creator collage (photography — export from Figma) -->
-          <div class="asset-slot relative aspect-[754/562] w-full overflow-hidden rounded-2xl">
-            <img src="/assets/hero-collage.png" alt="Zaumu creators at work" />
-          </div>
+          <!-- photo collage with the lime scribbles behind it, flattened from the PSD -->
+          <img src="/assets/hero-art.png" alt="Zaumu creators at work" width="754" height="562" class="h-auto w-full" />
         </div>
       </section>
 
-      <!-- ================================================================
-           WHY CREATORS JOIN  (Figma node 5:33 "Section 2")
-           ================================================================ -->
+      <!-- ============================================================
+           WHY CREATORS JOIN  (PSD group "Section 2")
+           ============================================================ -->
       <section class="bg-cream">
-        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[105px] lg:py-[27px] lg:pb-[22px]">
-          <h2 class="text-center text-[22px] font-extrabold leading-[30px] lg:text-[25px]">
-            Why Creators Join Zaumu
-          </h2>
+        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[102px] lg:py-[33px]">
+          <h2 class="text-center text-[22px] font-extrabold leading-[30px] lg:text-[25px]">Why Creators Join Zaumu</h2>
 
-          <ul class="mt-8 grid gap-5 sm:grid-cols-2 lg:mt-[30px] lg:grid-cols-4 lg:gap-[19px]">
-            <!-- Card 1 -->
-            <li class="rounded-2xl bg-white p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)] lg:h-[206px]">
-              <span class="flex size-14 items-center justify-center rounded-xl bg-chip-lime">
-                <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" />
-                  <path d="M14.5 9.2c-.4-.9-1.4-1.4-2.5-1.4-1.4 0-2.5.8-2.5 1.9 0 2.6 5 1.3 5 3.9 0 1.1-1.1 1.9-2.5 1.9-1.1 0-2.1-.5-2.5-1.4M12 6.3v11.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-                </svg>
-              </span>
+          <ul class="mt-8 grid gap-5 sm:grid-cols-2 lg:mt-[29px] lg:grid-cols-4 lg:gap-4">
+            <li class="rounded-2xl bg-white p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)] lg:h-[209px]">
+              <img src="/assets/icon-1.png" alt="" width="56" height="58" class="h-[58px] w-[56px]" />
               <h3 class="mt-7 text-[16.667px] font-bold tracking-[-0.26px]">Find Paid Opportunities</h3>
-              <p class="mt-2.5 text-[13.75px] leading-[16.5px]">
-                Stop chasing brands.<br />Brands discover you.
-              </p>
+              <p class="mt-2.5 text-[13.75px] leading-[16.5px]">Stop chasing brands.<br />Brands discover you.</p>
             </li>
-
-            <!-- Card 2 -->
-            <li class="rounded-2xl bg-white p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)] lg:h-[206px]">
-              <span class="flex size-14 items-center justify-center rounded-xl bg-chip-violet">
-                <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <rect x="3" y="7" width="18" height="13" rx="2.2" stroke="currentColor" stroke-width="1.7" />
-                  <path d="M9 7V5.6c0-.9.7-1.6 1.6-1.6h2.8c.9 0 1.6.7 1.6 1.6V7M3 12h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-                </svg>
-              </span>
+            <li class="rounded-2xl bg-white p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)] lg:h-[209px]">
+              <img src="/assets/icon-2.png" alt="" width="56" height="58" class="h-[58px] w-[56px]" />
               <h3 class="mt-7 text-[16.667px] font-bold tracking-[-0.23px]">Build Your Portfolio</h3>
-              <p class="mt-2.5 text-[13.75px] leading-[16.5px]">
-                One professional profile<br />for your creative career.
-              </p>
+              <p class="mt-2.5 text-[13.75px] leading-[16.5px]">One professional profile<br />for your creative career.</p>
             </li>
-
-            <!-- Card 3 -->
-            <li class="rounded-2xl bg-white p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)] lg:h-[206px]">
-              <span class="flex size-14 items-center justify-center rounded-xl bg-chip-amber">
-                <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.7" />
-                  <circle cx="5" cy="17" r="2.5" stroke="currentColor" stroke-width="1.7" />
-                  <circle cx="19" cy="17" r="2.5" stroke="currentColor" stroke-width="1.7" />
-                  <path d="M10.3 7.5 6.6 14.6M13.7 7.5l3.7 7.1M7.5 17h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-                </svg>
-              </span>
+            <li class="rounded-2xl bg-white p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)] lg:h-[209px]">
+              <img src="/assets/icon-3.png" alt="" width="56" height="58" class="h-[58px] w-[56px]" />
               <h3 class="mt-7 text-[16.667px] font-bold tracking-[-0.26px]">Grow Your Network</h3>
-              <p class="mt-2.5 text-[13.75px] leading-[16.5px]">
-                Connect with agencies,<br />brands and collaborators.
-              </p>
+              <p class="mt-2.5 text-[13.75px] leading-[16.5px]">Connect with agencies,<br />brands and collaborators.</p>
             </li>
-
-            <!-- Card 4 -->
-            <li class="rounded-2xl bg-white p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)] lg:h-[206px]">
-              <span class="flex size-14 items-center justify-center rounded-xl bg-chip-rose">
-                <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 9.5v5A1.5 1.5 0 0 0 5.5 16H8l6 4V4L8 8H5.5A1.5 1.5 0 0 0 4 9.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
-                  <path d="M17.5 9a4 4 0 0 1 0 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-                </svg>
-              </span>
+            <li class="rounded-2xl bg-white p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)] lg:h-[209px]">
+              <img src="/assets/icon-4.png" alt="" width="56" height="58" class="h-[58px] w-[56px]" />
               <h3 class="mt-7 text-[16.667px] font-bold tracking-[-0.39px]">Manage Campaigns</h3>
-              <p class="mt-2.5 text-[13.75px] leading-[16.5px]">
-                Keep briefs, communication<br />and deliverables in one place.
-              </p>
+              <p class="mt-2.5 text-[13.75px] leading-[16.5px]">Keep briefs, communication<br />and deliverables in one place.</p>
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- ================================================================
-           WHAT BRANDS SEE  (Figma node 5:52 "Section 3")
-           ================================================================ -->
+      <!-- ============================================================
+           WHAT BRANDS SEE  (PSD group "Section 3")
+           ============================================================ -->
       <section class="bg-cream-light">
-        <div class="mx-auto grid max-w-[1440px] items-center gap-10 px-6 py-14 lg:grid-cols-[minmax(0,753px)_minmax(0,1fr)] lg:gap-[42px] lg:px-[155px] lg:py-[34px]">
-          <!-- Creator profile dashboard (UI mockup — export from Figma) -->
-          <div class="asset-slot aspect-[753/371] w-full overflow-hidden rounded-xl">
-            <img src="/assets/creator-overview.png" alt="A Zaumu creator profile as brands see it" loading="lazy" />
-          </div>
+        <div class="mx-auto grid max-w-[1440px] items-center gap-10 px-6 py-14 lg:grid-cols-[minmax(0,753px)_minmax(0,1fr)] lg:gap-[42px] lg:px-[155px] lg:py-[36px]">
+          <img src="/assets/creator-overview.png" alt="A Zaumu creator profile as brands see it" width="753" height="371" class="h-auto w-full rounded-xl" loading="lazy" />
 
           <div class="relative">
-            <!-- curved arrow accent, hidden on small screens -->
-            <svg
-              class="absolute -left-[108px] top-16 hidden h-9 w-[108px] text-brand lg:block"
-              viewBox="0 0 108 36"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path d="M2 6c26 26 62 30 100 22" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
-              <path d="M92 20l12 8-14 5" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-            <h2 class="text-[26px] font-extrabold leading-[1.2] tracking-[-0.67px] lg:text-[31.25px] lg:leading-[37.5px]">
-              This is what<br />brands see
-            </h2>
+            <img src="/assets/arrow.png" alt="" width="109" height="37" class="absolute -left-[118px] top-16 hidden h-[37px] w-[109px] lg:block" loading="lazy" />
+            <h2 class="text-[26px] font-extrabold leading-[1.2] tracking-[-0.67px] lg:text-[31.25px] lg:leading-[37.5px]">This is what<br />brands see</h2>
             <p class="mt-6 max-w-[220px] text-[15px] font-medium leading-[20px] lg:text-[16.667px]">
               Your profile showcases your work, audience and impact thus making it easy for
               brands to find and trust you
@@ -296,95 +178,52 @@
         </div>
       </section>
 
-      <!-- ================================================================
-           HOW IT WORKS  (Figma node 5:58 "Section 4")
-           ================================================================ -->
-      <section id="how-it-works" class="bg-white">
-        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[186px] lg:py-[27px]">
-          <h2 class="text-center text-[22px] font-extrabold leading-[30px] lg:text-[25px]">
-            How Zaumu Works for Creators
-          </h2>
+      <!-- ============================================================
+           HOW IT WORKS  (PSD group "Section 4")
+           ============================================================ -->
+      <section id="how-it-works" class="bg-offwhite">
+        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[186px] lg:py-[30px]">
+          <h2 class="text-center text-[22px] font-extrabold leading-[30px] lg:text-[25px]">How Zaumu Works for Creators</h2>
 
-          <ol class="relative mt-10 grid gap-10 sm:grid-cols-2 lg:mt-[53px] lg:grid-cols-4 lg:gap-6">
-            <!-- connector line (desktop only) -->
-            <span
-              class="pointer-events-none absolute left-[12.5%] right-[12.5%] top-[15px] hidden border-t-2 border-dashed border-black/20 lg:block"
-              aria-hidden="true"
-            ></span>
+          <ol class="relative mt-10 grid gap-10 sm:grid-cols-2 lg:mt-[46px] lg:grid-cols-4 lg:gap-6">
+            <span class="pointer-events-none absolute left-[12.5%] right-[12.5%] top-[19px] hidden border-t-2 border-dashed border-black/20 lg:block" aria-hidden="true"></span>
 
-            <!-- Step 1 -->
             <li class="relative flex flex-col items-center text-center">
-              <span class="relative z-10 flex size-8 items-center justify-center rounded-full bg-brand text-[13px] font-extrabold">1</span>
-              <span class="mt-4 flex size-[68px] items-center justify-center rounded-2xl bg-chip-lime">
-                <svg class="size-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="10" cy="8" r="3.6" stroke="currentColor" stroke-width="1.7" />
-                  <path d="M3.6 19.4c.6-3.2 3.3-5.4 6.4-5.4 1.3 0 2.5.4 3.5 1M17.5 14v6M14.5 17h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-                </svg>
-              </span>
+              <span class="relative z-10 flex size-10 items-center justify-center rounded-full bg-brand text-[15px] font-extrabold">1</span>
+              <img src="/assets/step-01.png" alt="" width="68" height="68" class="mt-4 size-[68px]" loading="lazy" />
               <h3 class="mt-5 text-[15.352px] font-extrabold tracking-[-0.3px]">Create Profile</h3>
-              <p class="mt-2 max-w-[170px] text-[12.29px] font-medium leading-[16.667px] tracking-[-0.144px]">
-                Build your profile and showcase your best work
-              </p>
+              <p class="mt-2 max-w-[170px] text-[12.29px] font-medium leading-[16.667px] tracking-[-0.144px]">Build your profile and showcase your best work</p>
             </li>
-
-            <!-- Step 2 -->
             <li class="relative flex flex-col items-center text-center">
-              <span class="relative z-10 flex size-8 items-center justify-center rounded-full bg-brand text-[13px] font-extrabold">2</span>
-              <span class="mt-4 flex size-[68px] items-center justify-center rounded-2xl bg-chip-lime">
-                <svg class="size-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
-                  <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.7" />
-                </svg>
-              </span>
+              <span class="relative z-10 flex size-10 items-center justify-center rounded-full bg-brand text-[15px] font-extrabold">2</span>
+              <img src="/assets/step-02.png" alt="" width="68" height="68" class="mt-4 size-[68px]" loading="lazy" />
               <h3 class="mt-5 text-[15.352px] font-extrabold tracking-[-0.48px]">Get Discovered</h3>
-              <p class="mt-2 max-w-[170px] text-[12.29px] font-medium leading-[16.667px] tracking-[-0.144px]">
-                Our AI matches you with brands looking for talent like yours
-              </p>
+              <p class="mt-2 max-w-[170px] text-[12.29px] font-medium leading-[16.667px] tracking-[-0.144px]">Our AI matches you with brands looking for talent like yours</p>
             </li>
-
-            <!-- Step 3 -->
             <li class="relative flex flex-col items-center text-center">
-              <span class="relative z-10 flex size-8 items-center justify-center rounded-full bg-brand text-[13px] font-extrabold">3</span>
-              <span class="mt-4 flex size-[68px] items-center justify-center rounded-2xl bg-chip-lime">
-                <svg class="size-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <rect x="2.8" y="5" width="18.4" height="14" rx="2.2" stroke="currentColor" stroke-width="1.7" />
-                  <path d="m3.5 6.5 8.5 6.2 8.5-6.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
+              <span class="relative z-10 flex size-10 items-center justify-center rounded-full bg-brand text-[15px] font-extrabold">3</span>
+              <img src="/assets/step-03.png" alt="" width="68" height="68" class="mt-4 size-[68px]" loading="lazy" />
               <h3 class="mt-5 text-[15.352px] font-extrabold tracking-[-0.12px]">Collaborate</h3>
-              <p class="mt-2 max-w-[170px] text-[12.29px] font-medium leading-[16.667px] tracking-[-0.096px]">
-                Receive invitations, chat, manage campaigns and deliver content
-              </p>
+              <p class="mt-2 max-w-[170px] text-[12.29px] font-medium leading-[16.667px] tracking-[-0.096px]">Receive invitations, chat, manage campaigns and deliver content</p>
             </li>
-
-            <!-- Step 4 -->
             <li class="relative flex flex-col items-center text-center">
-              <span class="relative z-10 flex size-8 items-center justify-center rounded-full bg-brand text-[13px] font-extrabold">4</span>
-              <span class="mt-4 flex size-[68px] items-center justify-center rounded-2xl bg-chip-lime">
-                <svg class="size-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" />
-                  <path d="M14.5 9.2c-.4-.9-1.4-1.4-2.5-1.4-1.4 0-2.5.8-2.5 1.9 0 2.6 5 1.3 5 3.9 0 1.1-1.1 1.9-2.5 1.9-1.1 0-2.1-.5-2.5-1.4M12 6.3v11.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-                </svg>
-              </span>
+              <span class="relative z-10 flex size-10 items-center justify-center rounded-full bg-brand text-[15px] font-extrabold">4</span>
+              <img src="/assets/step-04.png" alt="" width="68" height="68" class="mt-4 size-[68px]" loading="lazy" />
               <h3 class="mt-5 text-[15.352px] font-extrabold tracking-[-0.48px]">Get Paid &amp; Grow</h3>
-              <p class="mt-2 max-w-[170px] text-[12.29px] font-medium leading-[16.667px] tracking-[-0.048px]">
-                Get paid securely and build long-term brand relationships
-              </p>
+              <p class="mt-2 max-w-[170px] text-[12.29px] font-medium leading-[16.667px] tracking-[-0.048px]">Get paid securely and build long-term brand relationships</p>
             </li>
           </ol>
         </div>
       </section>
 
-      <!-- ================================================================
-           OPPORTUNITIES START HERE  (Figma node 5:74 "Section 5")
-           ================================================================ -->
+      <!-- ============================================================
+           OPPORTUNITIES START HERE  (PSD group "Section 5")
+           ============================================================ -->
       <section class="bg-lavender">
-        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[110px] lg:py-[32px]">
-          <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,286px)_minmax(0,1fr)] lg:gap-[30px]">
+        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[102px] lg:py-[41px]">
+          <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,286px)_minmax(0,1fr)] lg:gap-[45px]">
             <div>
-              <h2 class="text-[26px] font-extrabold leading-[1.2] tracking-[-0.37px] lg:text-[31.25px] lg:leading-[37.5px]">
-                Opportunities<br />Start Here
-              </h2>
+              <h2 class="text-[26px] font-extrabold leading-[1.2] tracking-[-0.37px] lg:text-[31.25px] lg:leading-[37.5px]">Opportunities<br />Start Here</h2>
               <p class="mt-6 max-w-[286px] text-[15px] font-medium leading-[20px] lg:text-[16.667px]">
                 Brands are searching for creators with authentic audiences, quality work and
                 measurable results. Build your profile once and let opportunities come to you.
@@ -392,80 +231,63 @@
             </div>
 
             <div>
-              <!-- Brand wordmarks. Replace each span with the licensed logo SVG. -->
-              <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 lg:gap-[18px]">
-                <li class="flex h-[104px] items-center justify-center rounded-xl bg-white px-4"><span class="text-[15px] font-extrabold tracking-tight">NIKE</span></li>
-                <li class="flex h-[104px] items-center justify-center rounded-xl bg-white px-4"><span class="text-[14px] font-bold text-[#3aab3a]">Safaricom</span></li>
-                <li class="flex h-[104px] items-center justify-center rounded-xl bg-white px-4"><span class="text-[15px] font-extrabold text-[#d0021b]">absa</span></li>
-                <li class="flex h-[104px] items-center justify-center rounded-xl bg-white px-4"><span class="text-[14px] font-extrabold tracking-[0.1em]">TUSKER</span></li>
-                <li class="flex h-[104px] items-center justify-center rounded-xl bg-white px-4"><span class="text-[16px] font-extrabold text-[#34d186]">Bolt</span></li>
-                <li class="flex h-[104px] items-center justify-center rounded-xl bg-white px-4"><span class="text-[14px] font-bold tracking-tight">showmax</span></li>
+              <ul class="grid grid-cols-3 gap-3 sm:grid-cols-6 lg:gap-3">
+                <li class="flex aspect-square items-center justify-center rounded-2xl bg-white p-5"><img src="/assets/brand-nike.png" alt="Nike" width="110" height="57" class="max-h-[57px] w-auto max-w-full" loading="lazy" /></li>
+                <li class="flex aspect-square items-center justify-center rounded-2xl bg-white p-5"><img src="/assets/brand-safaricom.png" alt="Safaricom" width="116" height="27" class="max-h-[40px] w-auto max-w-full" loading="lazy" /></li>
+                <li class="flex aspect-square items-center justify-center rounded-2xl bg-white p-5"><img src="/assets/brand-absa.png" alt="Absa" width="88" height="89" class="max-h-[89px] w-auto max-w-full" loading="lazy" /></li>
+                <li class="flex aspect-square items-center justify-center rounded-2xl bg-white p-5"><img src="/assets/brand-tusker.png" alt="Tusker" width="96" height="102" class="max-h-[92px] w-auto max-w-full" loading="lazy" /></li>
+                <li class="flex aspect-square items-center justify-center rounded-2xl bg-white p-5"><img src="/assets/brand-bolt.png" alt="Bolt" width="129" height="73" class="max-h-[64px] w-auto max-w-full" loading="lazy" /></li>
+                <li class="flex aspect-square items-center justify-center rounded-2xl bg-white p-5"><img src="/assets/brand-showmax.png" alt="Showmax" width="164" height="92" class="max-h-[80px] w-auto max-w-full" loading="lazy" /></li>
               </ul>
-              <p class="mt-5 text-center text-[12px] font-medium">
-                Once your profile is complete, brands can discover and invite you directly.
-              </p>
+              <p class="mt-5 text-center text-[12px] font-medium">Once your profile is complete, brands can discover and invite you directly.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================================================================
-           TESTIMONIALS  (Figma node 5:79 "Section 6")
-           ================================================================ -->
-      <section class="bg-white">
-        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[75px] lg:py-[21px]">
-          <h2 class="text-center text-[24px] font-extrabold leading-[1.2] tracking-[-0.55px] lg:text-[31.25px]">
-            Creators. Real Stories. Real Growth
-          </h2>
+      <!-- ============================================================
+           TESTIMONIALS  (PSD group "Section 6")
 
-          <ul class="mt-9 grid gap-6 md:grid-cols-3 lg:mt-[46px] lg:gap-[15px]">
-            <li class="rounded-2xl border border-black/8 p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)]">
+           The PSD ships the avatar circles empty, so these render as
+           initials. Drop in headshots when the photography lands.
+           ============================================================ -->
+      <section class="bg-offwhite">
+        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[164px] lg:py-[26px]">
+          <h2 class="text-center text-[24px] font-extrabold leading-[1.2] tracking-[-0.55px] lg:text-[31.25px]">Creators. Real Stories. Real Growth</h2>
+
+          <ul class="mt-9 grid gap-6 md:grid-cols-3 lg:mt-[27px] lg:gap-[12px]">
+            <li class="rounded-2xl border border-black/10 bg-white p-6 lg:h-[201px]">
               <div class="flex items-start gap-4">
-                <span class="asset-slot size-12 shrink-0 overflow-hidden rounded-full">
-                  <img src="/assets/testimonial-1.png" alt="" loading="lazy" />
-                </span>
-                <blockquote class="text-[13.5px] font-medium leading-[19px]">
-                  "Zaumu helped me land my first national campaign. Game changer!"
-                </blockquote>
+                <span class="flex size-[88px] shrink-0 items-center justify-center rounded-full bg-[var(--color-avatar-1)] text-[24px] font-bold text-black/55" aria-hidden="true">BK</span>
+                <blockquote class="pt-1 text-[14px] font-semibold leading-[21px]">"Zaumu helped me land my first national campaign. Game changer!"</blockquote>
               </div>
-              <div class="mt-5 pl-16">
-                <p class="text-[13px] font-bold">Brian Kimani</p>
-                <p class="mt-0.5 text-[12px] text-black/55">Photographer</p>
+              <div class="mt-6 pl-[104px]">
+                <p class="text-[13px] font-bold text-[#2b2159]">Brian Kimani</p>
+                <p class="mt-0.5 text-[12px] font-semibold text-[#2b2159]/70">Photographer</p>
               </div>
             </li>
-
-            <li class="rounded-2xl border border-black/8 p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)]">
+            <li class="rounded-2xl border border-black/10 bg-white p-6 lg:h-[201px]">
               <div class="flex items-start gap-4">
-                <span class="asset-slot size-12 shrink-0 overflow-hidden rounded-full">
-                  <img src="/assets/testimonial-2.png" alt="" loading="lazy" />
-                </span>
-                <blockquote class="text-[13.5px] font-medium leading-[19px]">
-                  "My profile brings in opportunities I never knew existed."
-                </blockquote>
+                <span class="flex size-[88px] shrink-0 items-center justify-center rounded-full bg-[var(--color-avatar-2)] text-[24px] font-bold text-black/55" aria-hidden="true">TM</span>
+                <blockquote class="pt-1 text-[14px] font-semibold leading-[21px]">"My profile brings in opportunities I never knew existed"</blockquote>
               </div>
-              <div class="mt-5 pl-16">
-                <p class="text-[13px] font-bold">Tess Mwangi</p>
-                <p class="mt-0.5 text-[12px] text-black/55">Lifestyle Creator</p>
+              <div class="mt-6 pl-[104px]">
+                <p class="text-[13px] font-bold text-[#2b2159]">Tess Mwangi</p>
+                <p class="mt-0.5 text-[12px] font-semibold text-[#2b2159]/70">Lifestyle Creator</p>
               </div>
             </li>
-
-            <li class="rounded-2xl border border-black/8 p-6 shadow-[0_2px_12px_rgb(0_0_0/0.04)]">
+            <li class="rounded-2xl border border-black/10 bg-white p-6 lg:h-[201px]">
               <div class="flex items-start gap-4">
-                <span class="asset-slot size-12 shrink-0 overflow-hidden rounded-full">
-                  <img src="/assets/testimonial-3.png" alt="" loading="lazy" />
-                </span>
-                <blockquote class="text-[13.5px] font-medium leading-[19px]">
-                  "I spend less time pitching and more time creating."
-                </blockquote>
+                <span class="flex size-[88px] shrink-0 items-center justify-center rounded-full bg-[var(--color-avatar-3)] text-[24px] font-bold text-black/55" aria-hidden="true">BO</span>
+                <blockquote class="pt-1 text-[14px] font-semibold leading-[21px]">"I spend less time pitching and more time creating."</blockquote>
               </div>
-              <div class="mt-5 pl-16">
-                <p class="text-[13px] font-bold">David Okello</p>
-                <p class="mt-0.5 text-[12px] text-black/55">Filmmaker</p>
+              <div class="mt-6 pl-[104px]">
+                <p class="text-[13px] font-bold text-[#2b2159]">Brian Okello</p>
+                <p class="mt-0.5 text-[12px] font-semibold text-[#2b2159]/70">Filmmaker</p>
               </div>
             </li>
           </ul>
 
-          <!-- Carousel dots (decorative in the design; wired up in main.ts) -->
           <div class="mt-7 flex justify-center gap-2" data-testimonial-dots>
             <button type="button" class="size-2 rounded-full bg-brand" aria-label="Go to slide 1" aria-current="true"></button>
             <button type="button" class="size-2 rounded-full bg-black/20" aria-label="Go to slide 2"></button>
@@ -474,105 +296,70 @@
         </div>
       </section>
 
-      <!-- ================================================================
-           FOR BRANDS  (Figma node 5:83 "Section 7")
-           ================================================================ -->
+      <!-- ============================================================
+           FOR BRANDS  (PSD group "Section 7")
+           ============================================================ -->
       <section id="brands" class="bg-ink text-white">
-        <div class="mx-auto grid max-w-[1440px] items-center gap-12 px-6 py-14 lg:grid-cols-[minmax(0,400px)_minmax(0,1fr)] lg:gap-[110px] lg:px-[102px] lg:py-[51px]">
+        <div class="mx-auto grid max-w-[1440px] items-center gap-12 px-6 py-14 lg:grid-cols-[minmax(0,400px)_minmax(0,1fr)] lg:gap-[90px] lg:px-[102px] lg:py-[40px]">
           <div>
             <p class="text-[15.402px] font-extrabold tracking-[-0.48px] text-brand-deep">FOR BRANDS</p>
-            <h2 class="mt-6 text-[26px] font-semibold leading-[1.2] tracking-[-0.4px] lg:text-[31.25px] lg:leading-[37.5px]">
-              Discover Creators<br />Already Ready to Work.
-            </h2>
+            <h2 class="mt-6 text-[26px] font-semibold leading-[1.2] tracking-[-0.4px] lg:text-[31.25px] lg:leading-[37.5px]">Discover Creators<br />Already Ready to Work.</h2>
             <p class="mt-6 max-w-[345px] text-[14.583px] font-medium leading-[17.5px]">
               Access verified creator profiles, AI-powered recommendations, campaign
               management and real-time performance tracking all in one place.
             </p>
-
             <div class="mt-8 flex flex-wrap gap-4">
-              <a href="#demo" class="rounded-full bg-brand px-7 py-3.5 text-[14px] font-semibold text-ink transition hover:brightness-95">
-                Request Demo
-              </a>
-              <a href="#learn" class="rounded-full border border-white/30 px-7 py-3.5 text-[14px] font-semibold text-[#fefefe] transition hover:bg-white/10">
-                Learn More
-              </a>
+              <a href="#demo" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Request Demo</a>
+              <a href="#learn" class="rounded-[8px] border border-white/40 px-7 py-3.5 text-[14px] font-semibold text-[#fefefe] transition hover:bg-white/10">Learn More</a>
             </div>
           </div>
 
-          <!-- Brand dashboard (UI mockup — export from Figma) -->
-          <div class="asset-slot-dark aspect-[797/325] w-full overflow-hidden rounded-xl">
-            <img src="/assets/brands-dashboard.png" alt="The Zaumu brand dashboard" loading="lazy" />
-          </div>
+          <img src="/assets/brands-art.png" alt="The Zaumu brand dashboard" width="854" height="376" class="h-auto w-full" loading="lazy" />
         </div>
       </section>
 
-      <!-- ================================================================
-           READY TO JOIN  (Figma node 5:94 "Section 8")
-           ================================================================ -->
-      <section id="join" class="bg-white">
-        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[88px] lg:py-[21px]">
-          <h2 class="text-center text-[24px] font-extrabold leading-[1.2] tracking-[-0.98px] lg:text-[31.25px]">
-            Ready to Join Zaumu?
-          </h2>
+      <!-- ============================================================
+           READY TO JOIN  (PSD group "Section 8")
+           ============================================================ -->
+      <section id="join" class="bg-offwhite">
+        <div class="mx-auto max-w-[1440px] px-6 py-14 lg:px-[88px] lg:py-[26px]">
+          <h2 class="text-center text-[24px] font-extrabold leading-[1.2] tracking-[-0.98px] lg:text-[31.25px]">Ready to Join Zaumu?</h2>
 
-          <div class="mt-8 grid gap-6 lg:mt-[48px] lg:grid-cols-2 lg:gap-[30px]">
-            <!-- Creators -->
-            <div class="relative overflow-hidden rounded-2xl bg-brand-soft p-7 lg:min-h-[180px]">
+          <div class="mt-8 grid gap-6 lg:mt-[42px] lg:grid-cols-2 lg:gap-[30px]">
+            <div class="relative overflow-hidden rounded-2xl bg-brand-soft p-7 lg:min-h-[182px]">
               <div class="max-w-[62%]">
                 <p class="text-[9.7px] font-semibold tracking-[-0.3px]">FOR CREATORS</p>
                 <h3 class="mt-2.5 text-[20px] font-extrabold tracking-[-0.5px] lg:text-[23.117px]">Join for Free</h3>
-                <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">
-                  Build your profile, get discovered and grow your creative career.
-                </p>
-                <a href="#signup" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-[12.452px] font-semibold text-ink transition hover:brightness-95">
-                  Join as a Creator <span class="font-bold">&gt;</span>
-                </a>
+                <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">Build your profile, get discovered and grow your creative career.</p>
+                <a href="#signup" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-brand px-5 py-2.5 text-[12.452px] font-semibold text-black transition hover:brightness-95">Join as a Creator <span class="font-bold">&gt;</span></a>
               </div>
-              <div class="asset-slot absolute bottom-0 right-5 hidden h-[calc(100%-12px)] w-[190px] overflow-hidden rounded-t-xl sm:block">
-                <img src="/assets/cta-creator.png" alt="" loading="lazy" />
-              </div>
+              <img src="/assets/cta-creator.png" alt="" width="211" height="172" class="absolute bottom-0 right-6 hidden h-[calc(100%-10px)] w-auto object-contain object-bottom sm:block" loading="lazy" />
             </div>
 
-            <!-- Brands -->
-            <div class="relative overflow-hidden rounded-2xl bg-lavender-soft p-7 lg:min-h-[180px]">
+            <div class="relative overflow-hidden rounded-2xl bg-lavender-soft p-7 lg:min-h-[182px]">
               <div class="max-w-[62%]">
                 <p class="text-[9.7px] font-semibold tracking-[-0.3px]">FOR BRANDS</p>
                 <h3 class="mt-2.5 text-[20px] font-extrabold tracking-[-0.5px] lg:text-[23.117px]">Find the Right Creators</h3>
-                <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">
-                  Get access to Africa's top creators and run impactful campaigns.
-                </p>
-                <a href="#demo" class="mt-5 inline-flex items-center gap-2 rounded-full bg-violet px-5 py-2.5 text-[12.452px] font-semibold text-white transition hover:brightness-110">
-                  Request Demo <span class="font-bold">&gt;</span>
-                </a>
+                <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">Get access to Africa's top creators and run impactful campaigns.</p>
+                <a href="#demo" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-violet px-5 py-2.5 text-[12.452px] font-semibold text-white transition hover:brightness-110">Request Demo <span class="font-bold">&gt;</span></a>
               </div>
-              <div class="asset-slot absolute bottom-0 right-5 hidden h-[calc(100%-12px)] w-[190px] overflow-hidden rounded-t-xl sm:block">
-                <img src="/assets/cta-brand.png" alt="" loading="lazy" />
-              </div>
+              <img src="/assets/cta-brand.png" alt="" width="211" height="186" class="absolute bottom-0 right-6 hidden h-[calc(100%-10px)] w-auto object-contain object-bottom sm:block" loading="lazy" />
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- ==================================================================
-         FOOTER  (Figma node 5:109 "Section 9" — rebuilt from the flattened
-         PNG in the design so the links are real, crawlable markup)
-         ================================================================== -->
-    <footer class="bg-ink text-white">
+    <!-- ==============================================================
+         FOOTER  (PSD group "Section 9" — the PSD flattens the link
+         columns into one image, so they are rebuilt as real markup)
+         ============================================================== -->
+    <footer class="bg-footer text-white">
       <div class="mx-auto max-w-[1440px] px-6 py-12 lg:px-[113px] lg:py-[26px]">
         <div class="grid gap-10 lg:grid-cols-[minmax(0,240px)_repeat(3,minmax(0,1fr))_minmax(0,220px)] lg:gap-8">
           <div>
-            <img
-              src="/logo-white.png"
-              alt="Zaumu"
-              width="329"
-              height="162"
-              class="h-10 w-auto"
-              loading="lazy"
-            />
-            <p class="mt-4 max-w-[200px] text-[12px] leading-[18px] text-white/65">
-              The creator-first marketplace connecting Africa's talent with global opportunities.
-            </p>
+            <img src="/logo-white.png" alt="Zaumu" width="329" height="162" class="h-10 w-auto" loading="lazy" />
+            <p class="mt-4 max-w-[200px] text-[12px] leading-[18px] text-white/65">The creator-first marketplace connecting Africa's talent with global opportunities.</p>
           </div>
 
           <div>
@@ -589,7 +376,7 @@
             <h3 class="text-[13px] font-bold">Resources</h3>
             <ul class="mt-4 space-y-2.5 text-[12px] text-white/65">
               <li><a href="#blog" class="transition hover:text-white">Blog</a></li>
-              <li><a href="#help" class="transition hover:text-white">Help Center</a></li>
+              <li><a href="#help" class="transition hover:text-white">Help Centre</a></li>
               <li><a href="#guides" class="transition hover:text-white">Guides</a></li>
               <li><a href="#contact" class="transition hover:text-white">Contact</a></li>
             </ul>
@@ -607,45 +394,18 @@
 
           <div>
             <h3 class="text-[13px] font-bold">Follow Us</h3>
-            <!-- Brand social icons, reused from the Zaumu beta app -->
             <ul class="mt-4 flex flex-wrap gap-2">
-              <li>
-                <a href="#instagram" aria-label="Instagram" class="block transition hover:opacity-75">
-                  <img src="/icons/socials/Instagram.svg" alt="" width="28" height="28" class="size-7" loading="lazy" />
-                </a>
-              </li>
-              <li>
-                <a href="#tiktok" aria-label="TikTok" class="block transition hover:opacity-75">
-                  <img src="/icons/socials/Tiktok.svg" alt="" width="28" height="28" class="size-7" loading="lazy" />
-                </a>
-              </li>
-              <li>
-                <a href="#x" aria-label="X" class="block transition hover:opacity-75">
-                  <img src="/icons/socials/X.svg" alt="" width="28" height="28" class="size-7" loading="lazy" />
-                </a>
-              </li>
-              <li>
-                <a href="#linkedin" aria-label="LinkedIn" class="block transition hover:opacity-75">
-                  <img src="/icons/socials/linkedin.svg" alt="" width="28" height="28" class="size-7" loading="lazy" />
-                </a>
-              </li>
-              <li>
-                <a href="#youtube" aria-label="YouTube" class="block transition hover:opacity-75">
-                  <img src="/icons/socials/Youtube.svg" alt="" width="28" height="28" class="size-7" loading="lazy" />
-                </a>
-              </li>
-              <li>
-                <a href="#facebook" aria-label="Facebook" class="block transition hover:opacity-75">
-                  <img src="/icons/socials/Facebook.svg" alt="" width="28" height="28" class="size-7" loading="lazy" />
-                </a>
-              </li>
+              <li><a href="#instagram" aria-label="Instagram" class="block transition hover:opacity-75"><img src="/icons/socials/Instagram.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
+              <li><a href="#tiktok" aria-label="TikTok" class="block transition hover:opacity-75"><img src="/icons/socials/Tiktok.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
+              <li><a href="#x" aria-label="X" class="block transition hover:opacity-75"><img src="/icons/socials/X.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
+              <li><a href="#linkedin" aria-label="LinkedIn" class="block transition hover:opacity-75"><img src="/icons/socials/linkedin.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
+              <li><a href="#youtube" aria-label="YouTube" class="block transition hover:opacity-75"><img src="/icons/socials/Youtube.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
+              <li><a href="#facebook" aria-label="Facebook" class="block transition hover:opacity-75"><img src="/icons/socials/Facebook.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
             </ul>
           </div>
         </div>
 
-        <div class="mt-10 border-t border-white/10 pt-5 text-right text-[11px] text-white/50">
-          © 2025 Zaumu. All rights reserved.
-        </div>
+        <div class="mt-10 border-t border-white/10 pt-5 text-right text-[11px] text-white/50">© 2025 Zaumu. All rights reserved.</div>
       </div>
     </footer>
   </body>
