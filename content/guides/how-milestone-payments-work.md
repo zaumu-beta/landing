@@ -18,7 +18,7 @@ Two problems kill creator–brand deals: creators doing the work and chasing pay
 2. **Funding** — the brand pays the full campaign amount to Zaumu. Until this happens the campaign shows **Awaiting funding** and you're not expected to start.
 3. **Work** — you deliver against the first milestone by uploading files or links on the milestone page.
 4. **Review** — the brand has a review window (5 business days by default) to approve or request changes. Silence past the window counts as approval.
-5. **Invoice** — you upload your eTIMS invoice for the milestone amount. [How to do that](/resources/etims-invoice-for-a-campaign.html).
+5. **Invoice** — you upload your eTIMS invoice for the milestone amount. [How to do that](/resources/etims-invoice-for-a-campaign).
 6. **Release** — the money for that milestone is released to you, minus Zaumu's 15% service fee, and paid out to your M-Pesa or bank account. Payouts run daily on business days.
 
 Then the next milestone starts.

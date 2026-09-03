@@ -36,11 +36,11 @@ Upload 6–12 pieces of work. Tips that make a difference:
 
 ## 5. Set your rate guide
 
-Under **Rates**, give a starting rate for your main deliverables (for example "Instagram Reel from KES 20,000"). This is a guide, not a fixed price — you quote per campaign — but it helps brands with the right budget find you and filters out the ones without it. See [How to price your first brand deal](/resources/pricing-your-first-brand-deal-in-kenya.html) if you're not sure where to start.
+Under **Rates**, give a starting rate for your main deliverables (for example "Instagram Reel from KES 20,000"). This is a guide, not a fixed price — you quote per campaign — but it helps brands with the right budget find you and filters out the ones without it. See [How to price your first brand deal](/resources/pricing-your-first-brand-deal-in-kenya) if you're not sure where to start.
 
 ## 6. Add payout details
 
-Under **Payments**, add the M-Pesa number or bank account you'd like paid into, and your KRA PIN. You'll need the PIN to issue invoices — see [Issuing an eTIMS invoice for a campaign](/resources/etims-invoice-for-a-campaign.html).
+Under **Payments**, add the M-Pesa number or bank account you'd like paid into, and your KRA PIN. You'll need the PIN to issue invoices — see [Issuing an eTIMS invoice for a campaign](/resources/etims-invoice-for-a-campaign).
 
 ## 7. Get verified
 

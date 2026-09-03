@@ -8,9 +8,10 @@
  *
  * Environment variables (Vercel → Project → Settings → Environment Variables):
  *   ZEPTOMAIL_TOKEN      Send Mail token from ZeptoMail → Mail Agent → Setup Info
- *   ZEPTOMAIL_FROM       Verified sender address, e.g. hello@zaumu.co.ke
+ *   ZEPTOMAIL_FROM       Verified sender address, e.g. support@zaumu.com
  *   ZEPTOMAIL_FROM_NAME  Display name, default "Zaumu"
  *   SALES_TO             Comma-separated sales recipients
+ *   SITE_URL             Optional. Links in emails, default https://zaumu.com
  *   ZEPTOMAIL_API_URL    Optional. Default https://api.zeptomail.com/v1.1/email
  *                        (EU data centre: https://api.zeptomail.eu/v1.1/email)
  */
@@ -120,6 +121,7 @@ async function sendMail(mail: Mail): Promise<void> {
 
 /* ------------------------------------------------------------- templates */
 
+const SITE_URL = (process.env.SITE_URL ?? 'https://zaumu.com').replace(/\/$/, '')
 const BRAND = '#a9e724'
 const INK = '#141517'
 
@@ -178,11 +180,11 @@ function autoReply(lead: Lead): Mail {
     ? `<h1 style="margin:0 0 12px;font-size:24px;font-weight:800">Thanks, ${first} — we got your request.</h1>
        <p style="margin:0 0 16px">Someone from the Zaumu team will email you within one business day to book a 20-minute walkthrough. We'll show you how brands find verified creators, run campaigns and pay on milestones.</p>
        <p style="margin:0 0 24px">In the meantime, here's how the platform works for the creators you'll be hiring.</p>
-       <p style="margin:0">${button('https://zaumu.co.ke/#how-it-works', 'See how Zaumu works')}</p>`
+       <p style="margin:0">${button(`${SITE_URL}/#how-it-works`, 'See how Zaumu works')}</p>`
     : `<h1 style="margin:0 0 12px;font-size:24px;font-weight:800">Welcome, ${first}. You're on the list.</h1>
        <p style="margin:0 0 16px">We're setting things up for you. Expect an email within one business day with a link to finish your profile and get your accounts verified.</p>
        <p style="margin:0 0 24px">Zaumu is free for creators — we only take a fee when a campaign is completed and you've been paid.</p>
-       <p style="margin:0">${button('https://zaumu.co.ke/#how-it-works', 'How Zaumu works for creators')}</p>`
+       <p style="margin:0">${button(`${SITE_URL}/#how-it-works`, 'How Zaumu works for creators')}</p>`
 
   return {
     to: [{ email: lead.email, name: lead.name }],
@@ -215,7 +217,7 @@ export async function POST(request: Request): Promise<Response> {
     .map((email) => ({ email }))
   if (salesTo.length === 0) {
     console.error('[demo] SALES_TO is not configured')
-    return json(500, { ok: false, error: 'Something went wrong on our side. Please email hello@zaumu.co.ke.' })
+    return json(500, { ok: false, error: 'Something went wrong on our side. Please email support@zaumu.com.' })
   }
 
   try {

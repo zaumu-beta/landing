@@ -24,7 +24,7 @@ That's it. You've shown enthusiasm, you've set a specific time, and you've bough
 
 ## What to do with the 24 hours
 
-Write down every deliverable the brief actually asks for, including the ones that hide in the small print — story frames, "raw footage", a round of revisions, exclusivity from competing brands. Price each one. Then add usage (see [Know your usage rights](/resources/usage-rights-before-you-sign.html)). The number you get to is usually higher than the one you'd have said on the phone.
+Write down every deliverable the brief actually asks for, including the ones that hide in the small print — story frames, "raw footage", a round of revisions, exclusivity from competing brands. Price each one. Then add usage (see [Know your usage rights](/resources/usage-rights-before-you-sign)). The number you get to is usually higher than the one you'd have said on the phone.
 
 ## On Zaumu
 

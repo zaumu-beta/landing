@@ -10,10 +10,13 @@
 
     <title>About Zaumu — The creator-first marketplace for Africa</title>
     <meta name="description" content="Zaumu is where Africa's photographers, filmmakers, designers and content creators showcase their work, get discovered by brands and get paid — securely, in one place." />
+    <!--@seo path="/about" type="website"-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
     <script type="module" src="/src/main.ts"></script>
   </head>
 
@@ -36,8 +39,8 @@
             payment — happens in one place. No chasing invoices. No disappearing clients.
           </p>
           <div class="mt-9 flex flex-wrap gap-4">
-            <a href="/demo.html?for=creator" class="rounded-[8px] bg-brand px-8 py-4 text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
-            <a href="/demo.html" class="rounded-[8px] border border-black bg-white px-8 py-4 text-[14px] font-semibold text-black transition hover:bg-black/5">Book a brand demo</a>
+            <a href="/demo?for=creator" class="rounded-[8px] bg-brand px-8 py-4 text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
+            <a href="/demo" class="rounded-[8px] border border-black bg-white px-8 py-4 text-[14px] font-semibold text-black transition hover:bg-black/5">Book a brand demo</a>
           </div>
         </div>
       </section>
@@ -182,7 +185,7 @@
                 <p class="text-[9.7px] font-semibold tracking-[-0.3px]">FOR CREATORS</p>
                 <h3 class="mt-2.5 text-[20px] font-extrabold tracking-[-0.5px] lg:text-[23.117px]">Join for Free</h3>
                 <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">Build your profile, get discovered and grow your creative career.</p>
-                <a href="/demo.html?for=creator" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-brand px-5 py-2.5 text-[12.452px] font-semibold text-black transition hover:brightness-95">Join as a Creator <span class="font-bold">&gt;</span></a>
+                <a href="/demo?for=creator" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-brand px-5 py-2.5 text-[12.452px] font-semibold text-black transition hover:brightness-95">Join as a Creator <span class="font-bold">&gt;</span></a>
               </div>
               <img src="/assets/cta-creator.png" alt="" width="211" height="172" class="absolute bottom-0 right-6 hidden h-[calc(100%-10px)] w-auto object-contain object-bottom sm:block" loading="lazy" />
             </div>
@@ -191,7 +194,7 @@
                 <p class="text-[9.7px] font-semibold tracking-[-0.3px]">FOR BRANDS</p>
                 <h3 class="mt-2.5 text-[20px] font-extrabold tracking-[-0.5px] lg:text-[23.117px]">Find the Right Creators</h3>
                 <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">Get access to Africa's top creators and run impactful campaigns.</p>
-                <a href="/demo.html" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-violet px-5 py-2.5 text-[12.452px] font-semibold text-white transition hover:brightness-110">Request Demo <span class="font-bold">&gt;</span></a>
+                <a href="/demo" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-violet px-5 py-2.5 text-[12.452px] font-semibold text-white transition hover:brightness-110">Request Demo <span class="font-bold">&gt;</span></a>
               </div>
               <img src="/assets/cta-brand.png" alt="" width="211" height="186" class="absolute bottom-0 right-6 hidden h-[calc(100%-10px)] w-auto object-contain object-bottom sm:block" loading="lazy" />
             </div>

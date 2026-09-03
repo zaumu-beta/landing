@@ -11,15 +11,15 @@
 
     <title>{{title}} — Zaumu</title>
     <meta name="description" content="{{description}}" />
-    <meta property="og:title" content="{{title}}" />
-    <meta property="og:description" content="{{description}}" />
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="{{isoDate}}" />
+    <!--@seo path="/resources/{{slug}}" type="article" published="{{isoDate}}"-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
     <script type="module" src="/src/main.ts"></script>
+    {{jsonld}}
   </head>
 
   <body class="bg-white text-black" data-page="resources">
@@ -30,9 +30,9 @@
       <section class="bg-{{typeSoft}}">
         <div class="mx-auto max-w-[1440px] px-6 py-12 lg:px-[102px] lg:py-[64px]">
           <nav aria-label="Breadcrumb" class="text-[13px] font-semibold text-black/60">
-            <a href="/resources.html" class="hover:text-black">Resources</a>
+            <a href="/resources" class="hover:text-black">Resources</a>
             <span class="mx-2" aria-hidden="true">/</span>
-            <a href="/resources.html?type={{type}}" class="hover:text-black">{{typeLabel}}</a>
+            <a href="/resources?type={{type}}" class="hover:text-black">{{typeLabel}}</a>
           </nav>
           <h1 class="mt-6 max-w-[860px] text-[30px] font-extrabold leading-[1.15] tracking-[-0.4px] sm:text-[38px] lg:text-[46px]">{{title}}</h1>
           <p class="mt-5 max-w-[680px] text-[16px] font-medium leading-[26px] text-black/75 lg:text-[17px]">{{description}}</p>
@@ -60,13 +60,13 @@
               <p class="mt-2 text-[13px] leading-[20px] text-black/65">Share it with a creator who needs it, or tell us what's missing.</p>
               <div class="mt-4 flex gap-2">
                 <button type="button" data-share class="rounded-[8px] bg-brand px-4 py-2.5 text-[13px] font-semibold text-black transition hover:brightness-95">Share</button>
-                <a href="mailto:hello@zaumu.co.ke?subject=Resource%20feedback%3A%20{{title}}" class="rounded-[8px] border border-black px-4 py-2.5 text-[13px] font-semibold transition hover:bg-black/5">Feedback</a>
+                <a href="mailto:support@zaumu.com?subject=Resource%20feedback%3A%20{{title}}" class="rounded-[8px] border border-black px-4 py-2.5 text-[13px] font-semibold transition hover:bg-black/5">Feedback</a>
               </div>
             </div>
             <div class="rounded-2xl bg-ink p-6 text-white">
               <p class="text-[11px] font-extrabold uppercase tracking-[0.1em] text-brand">Zaumu</p>
               <p class="mt-2 text-[15px] font-extrabold leading-[1.3]">Get discovered, run campaigns and get paid — free for creators.</p>
-              <a href="/demo.html?for=creator" class="mt-4 inline-block rounded-[8px] bg-brand px-4 py-2.5 text-[13px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
+              <a href="/demo?for=creator" class="mt-4 inline-block rounded-[8px] bg-brand px-4 py-2.5 text-[13px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
             </div>
           </aside>
         </div>

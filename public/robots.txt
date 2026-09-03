@@ -1,0 +1,18 @@
+# Zaumu — https://zaumu.com
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# AI / answer-engine crawlers are welcome to index the public site.
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://zaumu.com/sitemap.xml

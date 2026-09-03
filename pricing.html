@@ -10,11 +10,15 @@
 
     <title>Pricing — Zaumu</title>
     <meta name="description" content="Zaumu is free to join for creators and brands. Pay a flat 15% service fee only on completed campaigns, or pick a plan for teams running campaigns every month." />
+    <!--@seo path="/pricing" type="website"-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
     <script type="module" src="/src/main.ts"></script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is the service fee charged?", "acceptedAnswer": {"@type": "Answer", "text": "Only when a campaign is marked complete and payment is released. It's calculated on the contract amount and shown on the contract before anyone signs, and again on the receipt."}}, {"@type": "Question", "name": "Who pays the fee — the brand or the creator?", "acceptedAnswer": {"@type": "Answer", "text": "The fee is deducted from the completed transaction, so it comes out of the contract amount the brand funds. Both sides see the exact split before work starts."}}, {"@type": "Question", "name": "What happens if a campaign is cancelled?", "acceptedAnswer": {"@type": "Answer", "text": "Milestones that haven't started are refunded to the brand minus payment-processing costs. Work that's already been delivered and approved is paid out to the creator."}}, {"@type": "Question", "name": "How do creators get paid?", "acceptedAnswer": {"@type": "Answer", "text": "M-Pesa or bank transfer, in KES. More markets and payout methods are on the way."}}, {"@type": "Question", "name": "Can I cancel a plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — monthly plans cancel any time and you drop back to pay-as-you-go. Annual plans run to the end of the term."}}]}</script>
   </head>
 
   <body class="bg-white text-black" data-page="pricing">
@@ -64,7 +68,7 @@
               <p class="mt-1.5 text-[13px] font-medium text-black/60">For your first campaigns.</p>
               <p class="mt-6 flex items-baseline gap-1"><span class="text-[40px] font-extrabold leading-none">Free</span></p>
               <p class="mt-2 text-[13px] font-semibold text-black/70">+ 15% service fee on completed campaigns</p>
-              <a href="/demo.html" class="mt-7 rounded-[8px] border border-black px-6 py-3.5 text-center text-[14px] font-semibold transition hover:bg-black/5">Get started</a>
+              <a href="/demo" class="mt-7 rounded-[8px] border border-black px-6 py-3.5 text-center text-[14px] font-semibold transition hover:bg-black/5">Get started</a>
               <ul class="mt-7 space-y-3 text-[13.5px] font-medium">
                 <li class="flex gap-2.5"><svg class="mt-0.5 size-4 shrink-0 text-brand-deep" viewBox="0 0 20 20" fill="none"><path d="m4 10.5 4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Search verified creator profiles</li>
                 <li class="flex gap-2.5"><svg class="mt-0.5 size-4 shrink-0 text-brand-deep" viewBox="0 0 20 20" fill="none"><path d="m4 10.5 4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Post campaigns and receive proposals</li>
@@ -84,7 +88,7 @@
                 <span class="text-[14px] font-semibold text-white/60">/month</span>
               </p>
               <p class="mt-2 text-[13px] font-semibold text-brand">+ 10% service fee on completed campaigns</p>
-              <a href="/demo.html" class="mt-7 rounded-[8px] bg-brand px-6 py-3.5 text-center text-[14px] font-semibold text-black transition hover:brightness-95">Request demo</a>
+              <a href="/demo" class="mt-7 rounded-[8px] bg-brand px-6 py-3.5 text-center text-[14px] font-semibold text-black transition hover:brightness-95">Request demo</a>
               <ul class="mt-7 space-y-3 text-[13.5px] font-medium">
                 <li class="flex gap-2.5"><svg class="mt-0.5 size-4 shrink-0 text-brand" viewBox="0 0 20 20" fill="none"><path d="m4 10.5 4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Pay as you go</li>
                 <li class="flex gap-2.5"><svg class="mt-0.5 size-4 shrink-0 text-brand" viewBox="0 0 20 20" fill="none"><path d="m4 10.5 4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited active campaigns</li>
@@ -100,7 +104,7 @@
               <p class="mt-1.5 text-[13px] font-medium text-black/60">For agencies and large brands.</p>
               <p class="mt-6 flex items-baseline gap-1"><span class="text-[40px] font-extrabold leading-none">Custom</span></p>
               <p class="mt-2 text-[13px] font-semibold text-black/70">Volume-based service fee</p>
-              <a href="/demo.html" class="mt-7 rounded-[8px] border border-black px-6 py-3.5 text-center text-[14px] font-semibold transition hover:bg-black/5">Talk to us</a>
+              <a href="/demo" class="mt-7 rounded-[8px] border border-black px-6 py-3.5 text-center text-[14px] font-semibold transition hover:bg-black/5">Talk to us</a>
               <ul class="mt-7 space-y-3 text-[13.5px] font-medium">
                 <li class="flex gap-2.5"><svg class="mt-0.5 size-4 shrink-0 text-brand-deep" viewBox="0 0 20 20" fill="none"><path d="m4 10.5 4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Growth</li>
                 <li class="flex gap-2.5"><svg class="mt-0.5 size-4 shrink-0 text-brand-deep" viewBox="0 0 20 20" fill="none"><path d="m4 10.5 4 4 8-9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Multiple client workspaces</li>
@@ -146,7 +150,7 @@
                   <div class="flex justify-between border-t border-black/10 pt-2 text-[15px] font-extrabold"><dt>You receive</dt><dd>KES 34,000</dd></div>
                 </dl>
               </div>
-              <a href="/demo.html?for=creator" class="relative mt-6 block rounded-[8px] bg-brand px-6 py-3.5 text-center text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
+              <a href="/demo?for=creator" class="relative mt-6 block rounded-[8px] bg-brand px-6 py-3.5 text-center text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
             </div>
           </div>
         </div>
@@ -220,8 +224,8 @@
               <h2 class="text-[26px] font-extrabold leading-[1.2] lg:text-[31.25px]">Not sure which plan fits?</h2>
               <p class="mt-3 text-[15px] font-medium leading-[24px] text-white/75">Tell us what you're running and we'll walk you through the numbers — no pressure, 20 minutes.</p>
               <div class="mt-7 flex flex-wrap gap-4">
-                <a href="/demo.html" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Request Demo</a>
-                <a href="/demo.html?for=creator" class="rounded-[8px] border border-white/40 px-7 py-3.5 text-[14px] font-semibold transition hover:bg-white/10">I'm a creator</a>
+                <a href="/demo" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Request Demo</a>
+                <a href="/demo?for=creator" class="rounded-[8px] border border-white/40 px-7 py-3.5 text-[14px] font-semibold transition hover:bg-white/10">I'm a creator</a>
               </div>
             </div>
           </div>

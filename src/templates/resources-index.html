@@ -11,10 +11,13 @@
 
     <title>Resources — Zaumu</title>
     <meta name="description" content="Creator insights on rates, rights and brand deals, plus step-by-step guides to using Zaumu — profiles, campaigns, milestones and eTIMS invoices." />
+    <!--@seo path="/resources" type="website"-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
     <script type="module" src="/src/main.ts"></script>
   </head>
 
@@ -74,7 +77,7 @@
           <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-resource-grid>
 {{cards}}
           </div>
-          <p class="mt-10 hidden text-center text-[14px] font-medium text-black/60" data-resource-empty>Nothing matches that yet. Try a different word, or <a href="/demo.html?for=creator" class="font-bold underline">ask us directly</a>.</p>
+          <p class="mt-10 hidden text-center text-[14px] font-medium text-black/60" data-resource-empty>Nothing matches that yet. Try a different word, or <a href="/demo?for=creator" class="font-bold underline">ask us directly</a>.</p>
         </div>
       </section>
 
@@ -87,8 +90,8 @@
               <h2 class="text-[26px] font-extrabold leading-[1.2] lg:text-[31.25px]">Can't find what you need?</h2>
               <p class="mt-3 text-[15px] font-medium leading-[24px] text-white/75">Tell us what you're stuck on and we'll either point you to the answer or write the guide.</p>
               <div class="mt-7 flex flex-wrap gap-4">
-                <a href="mailto:hello@zaumu.co.ke" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Email support</a>
-                <a href="/demo.html?for=creator" class="rounded-[8px] border border-white/40 px-7 py-3.5 text-[14px] font-semibold transition hover:bg-white/10">Join as a Creator</a>
+                <a href="mailto:support@zaumu.com" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Email support</a>
+                <a href="/demo?for=creator" class="rounded-[8px] border border-white/40 px-7 py-3.5 text-[14px] font-semibold transition hover:bg-white/10">Join as a Creator</a>
               </div>
             </div>
           </div>

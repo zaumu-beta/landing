@@ -29,7 +29,7 @@ Once you submit, the brand has the review window from the contract — five busi
 Feedback arrives as comments on the milestone, and a change request restarts the review window when you resubmit. Two things keep this painless:
 
 - **Consolidate.** Ask the brand to gather all feedback into one round rather than drip-feeding it; the contract's revision count is per round.
-- **Confirm scope.** If a request goes beyond the brief, say so in the thread and offer a change order instead of quietly absorbing it. See [how milestones work](/resources/how-milestone-payments-work.html).
+- **Confirm scope.** If a request goes beyond the brief, say so in the thread and offer a change order instead of quietly absorbing it. See [how milestones work](/resources/how-milestone-payments-work).
 
 ## After approval
 

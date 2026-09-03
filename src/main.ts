@@ -286,6 +286,90 @@ function initResources(): void {
   apply()
 }
 
+/* ------------------------------------------------------------------
+   Creator profile — content tabs (latest/best) + post detail dialog
+   ------------------------------------------------------------------ */
+interface PostComment { user: string; at: string; text: string; sentiment: number; likes: number }
+interface Post {
+  caption: string; platformLabel: string; postedAt: string; likes: number; comments: number; views: number
+  plays: number; engagementRate: number; derivedReach: number; sentiment: number; series: number[]
+  tile: string; commentSample: PostComment[]
+}
+
+const fmtNum = (n: number): string => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(n >= 1e5 ? 0 : 1)}K` : String(n))
+
+function initCreatorProfile(): void {
+  const dialog = document.querySelector<HTMLDialogElement>('[data-post-dialog]')
+  const grid = document.querySelector<HTMLElement>('[data-post-grid]')
+  const dataEl = document.querySelector<HTMLScriptElement>('[data-posts]')
+  if (!dialog || !grid || !dataEl) return
+  const posts = JSON.parse(dataEl.textContent || '[]') as Post[]
+
+  document.querySelectorAll<HTMLButtonElement>('[data-content-tabs] [data-sort]').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll<HTMLButtonElement>('[data-content-tabs] [data-sort]').forEach((t) => t.setAttribute('aria-selected', String(t === tab)))
+      const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-post]'))
+      cards.sort((a, b) =>
+        tab.dataset.sort === 'best'
+          ? Number(b.dataset.likes) - Number(a.dataset.likes)
+          : new Date(b.dataset.at!).getTime() - new Date(a.dataset.at!).getTime(),
+      )
+      cards.forEach((c) => grid.appendChild(c))
+    })
+  })
+
+  const set = (name: string, value: string): void => {
+    const el = dialog.querySelector<HTMLElement>(`[data-f="${name}"]`)
+    if (el) el.textContent = value
+  }
+
+  const open = (p: Post): void => {
+    set('likes', fmtNum(p.likes)); set('comments', fmtNum(p.comments)); set('views', p.views ? fmtNum(p.views) : '—')
+    set('plays', p.plays ? fmtNum(p.plays) : '—'); set('engagementRate', `${p.engagementRate}%`)
+    set('derivedReach', p.derivedReach ? fmtNum(p.derivedReach) : '—'); set('sentiment', `${p.sentiment}%`)
+    set('caption', p.caption)
+    set('postedAt', `${p.platformLabel} · Posted ${new Date(p.postedAt).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })}`)
+    dialog.querySelector<HTMLElement>('[data-post-media]')!.innerHTML = p.tile
+    dialog.querySelector<HTMLElement>('[data-post-comments]')!.innerHTML = p.commentSample.length
+      ? p.commentSample.map((c) => `<li class="rounded-lg bg-white p-3"><p class="flex items-center justify-between text-[12px] font-bold"><span>${c.user}</span><span class="${c.sentiment >= 70 ? 'text-brand-deep' : c.sentiment >= 40 ? 'text-[#f7941d]' : 'text-[#e5484d]'}">${c.sentiment}% positive</span></p><p class="mt-1 text-[13px] font-medium">${c.text}</p><p class="mt-1 text-[11px] text-black/45">${new Date(c.at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} · ♥ ${c.likes}</p></li>`).join('')
+      : '<li class="text-[13px] font-medium text-black/55">Comment analysis appears once the post has synced.</li>'
+
+    const svg = dialog.querySelector<SVGSVGElement>('[data-post-chart]')!
+    const max = Math.max(...p.series, 1)
+    const pts = p.series.map((v, i) => [40 + (i * 520) / Math.max(p.series.length - 1, 1), 105 - (v / max) * 90] as const)
+    svg.innerHTML =
+      `<line x1="40" y1="105" x2="560" y2="105" stroke="rgba(0,0,0,.1)"/>` +
+      `<text x="0" y="20" font-size="10" fill="rgba(0,0,0,.5)">${fmtNum(max)}</text><text x="0" y="108" font-size="10" fill="rgba(0,0,0,.5)">0</text>` +
+      `<polyline fill="none" stroke="#a9e724" stroke-width="3" stroke-linejoin="round" points="${pts.map(([x, y]) => `${x},${y}`).join(' ')}"/>` +
+      pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="4" fill="#141517"/>`).join('') +
+      ['0h', '24h', '48h', '72h'].map((l, i) => `<text x="${40 + (i * 520) / 3}" y="120" font-size="10" text-anchor="middle" fill="rgba(0,0,0,.5)">${l}</text>`).join('')
+    dialog.showModal()
+  }
+
+  grid.querySelectorAll<HTMLButtonElement>('[data-post]').forEach((btn) => {
+    btn.addEventListener('click', () => open(posts[Number(btn.dataset.post)]!))
+  })
+  dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close() })
+}
+
+/* ------------------------------------------------------------------
+   Charts — Chart.js is loaded only on pages that have <canvas data-chart>,
+   and each chart is created when it scrolls into view.
+   ------------------------------------------------------------------ */
+function initCharts(): void {
+  const canvases = Array.from(document.querySelectorAll<HTMLCanvasElement>('canvas[data-chart]'))
+  if (canvases.length === 0) return
+  const lib = import('./charts')
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return
+      io.unobserve(e.target)
+      lib.then(({ render }) => render(e.target as HTMLCanvasElement))
+    })
+  }, { rootMargin: '200px' })
+  canvases.forEach((c) => io.observe(c))
+}
+
 /* Article page: native share, clipboard fallback */
 function initShare(): void {
   const btn = document.querySelector<HTMLButtonElement>('[data-share]')
@@ -309,6 +393,17 @@ initTestimonialDots()
 initDropdowns()
 initResources()
 initShare()
+initCreatorProfile()
+initCharts()
+
+/* /terms.html?account=brand|agency — the app links here; route to the right document */
+{
+  const alias = document.body.dataset.legalAlias
+  const account = new URLSearchParams(location.search).get('account')
+  if (alias === 'terms' && (account === 'brand' || account === 'agency')) {
+    location.replace(`/legal/terms-${account === 'brand' ? 'brands' : 'agencies'}`)
+  }
+}
 initActiveNav()
 initDemoForm()
 initPricing()

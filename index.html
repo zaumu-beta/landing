@@ -14,14 +14,15 @@
       name="description"
       content="Zaumu helps photographers, filmmakers, designers, influencers and content creators showcase their work, connect with brands, manage collaborations and grow their creative business — all in one platform."
     />
+    <!--@seo path="/" type="website"-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
+    <link rel="preload" as="image" href="/assets/hero-art.webp" type="image/webp" fetchpriority="high" />
     <script type="module" src="/src/main.ts"></script>
   </head>
 
@@ -54,7 +55,7 @@
             </p>
 
             <div class="mt-9 flex flex-wrap items-center gap-4 lg:mt-11 lg:gap-6">
-              <a href="/demo.html?for=creator" class="rounded-[8px] bg-brand px-9 py-4 text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
+              <a href="/demo?for=creator" class="rounded-[8px] bg-brand px-9 py-4 text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
               <a href="#brands" class="rounded-[8px] border border-black bg-white px-9 py-4 text-[14px] font-semibold text-black transition hover:bg-black/5">I'm a Brand</a>
             </div>
 
@@ -70,7 +71,7 @@
           </div>
 
           <!-- photo collage with the lime scribbles behind it, flattened from the PSD -->
-          <img src="/assets/hero-art.png" alt="Zaumu creators at work" width="754" height="562" class="h-auto w-full" />
+          <picture><source srcset="/assets/hero-art.webp" type="image/webp" /><img src="/assets/hero-art.png" alt="Zaumu creators at work" width="754" height="562" class="h-auto w-full" fetchpriority="high" decoding="async" /></picture>
         </div>
       </section>
 
@@ -111,7 +112,7 @@
            ============================================================ -->
       <section class="bg-cream-light">
         <div class="mx-auto grid max-w-[1440px] items-center gap-10 px-6 py-14 lg:grid-cols-[minmax(0,753px)_minmax(0,1fr)] lg:gap-[42px] lg:px-[155px] lg:py-[36px]">
-          <img src="/assets/creator-overview.png" alt="A Zaumu creator profile as brands see it" width="753" height="371" class="h-auto w-full rounded-xl" loading="lazy" />
+          <picture><source srcset="/assets/creator-overview.webp" type="image/webp" /><img src="/assets/creator-overview.png" alt="A Zaumu creator profile as brands see it" width="753" height="371" class="h-auto w-full rounded-xl" loading="lazy" decoding="async" /></picture>
 
           <div class="relative">
             <img src="/assets/arrow.png" alt="" width="109" height="37" class="absolute -left-[118px] top-16 hidden h-[37px] w-[109px] lg:block" loading="lazy" />
@@ -255,12 +256,12 @@
               management and real-time performance tracking all in one place.
             </p>
             <div class="mt-8 flex flex-wrap gap-4">
-              <a href="/demo.html" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Request Demo</a>
+              <a href="/demo" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Request Demo</a>
               <a href="#learn" class="rounded-[8px] border border-white/40 px-7 py-3.5 text-[14px] font-semibold text-[#fefefe] transition hover:bg-white/10">Learn More</a>
             </div>
           </div>
 
-          <img src="/assets/brands-art.png" alt="The Zaumu brand dashboard" width="854" height="376" class="h-auto w-full" loading="lazy" />
+          <picture><source srcset="/assets/brands-art.webp" type="image/webp" /><img src="/assets/brands-art.png" alt="The Zaumu brand dashboard" width="854" height="376" class="h-auto w-full" loading="lazy" decoding="async" /></picture>
         </div>
       </section>
 
@@ -277,7 +278,7 @@
                 <p class="text-[9.7px] font-semibold tracking-[-0.3px]">FOR CREATORS</p>
                 <h3 class="mt-2.5 text-[20px] font-extrabold tracking-[-0.5px] lg:text-[23.117px]">Join for Free</h3>
                 <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">Build your profile, get discovered and grow your creative career.</p>
-                <a href="/demo.html?for=creator" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-brand px-5 py-2.5 text-[12.452px] font-semibold text-black transition hover:brightness-95">Join as a Creator <span class="font-bold">&gt;</span></a>
+                <a href="/demo?for=creator" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-brand px-5 py-2.5 text-[12.452px] font-semibold text-black transition hover:brightness-95">Join as a Creator <span class="font-bold">&gt;</span></a>
               </div>
               <img src="/assets/cta-creator.png" alt="" width="211" height="172" class="absolute bottom-0 right-6 hidden h-[calc(100%-10px)] w-auto object-contain object-bottom sm:block" loading="lazy" />
             </div>
@@ -287,7 +288,7 @@
                 <p class="text-[9.7px] font-semibold tracking-[-0.3px]">FOR BRANDS</p>
                 <h3 class="mt-2.5 text-[20px] font-extrabold tracking-[-0.5px] lg:text-[23.117px]">Find the Right Creators</h3>
                 <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">Get access to Africa's top creators and run impactful campaigns.</p>
-                <a href="/demo.html" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-violet px-5 py-2.5 text-[12.452px] font-semibold text-white transition hover:brightness-110">Request Demo <span class="font-bold">&gt;</span></a>
+                <a href="/demo" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-violet px-5 py-2.5 text-[12.452px] font-semibold text-white transition hover:brightness-110">Request Demo <span class="font-bold">&gt;</span></a>
               </div>
               <img src="/assets/cta-brand.png" alt="" width="211" height="186" class="absolute bottom-0 right-6 hidden h-[calc(100%-10px)] w-auto object-contain object-bottom sm:block" loading="lazy" />
             </div>
