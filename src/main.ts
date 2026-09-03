@@ -222,8 +222,93 @@ function initPricing(): void {
   })
 }
 
+/* ------------------------------------------------------------------
+   Header dropdown (Resources)
+   ------------------------------------------------------------------ */
+function initDropdowns(): void {
+  document.querySelectorAll<HTMLElement>('[data-dropdown]').forEach((root) => {
+    const toggle = root.querySelector<HTMLButtonElement>('[data-dropdown-toggle]')!
+    const menu = root.querySelector<HTMLElement>('[data-dropdown-menu]')!
+    const set = (open: boolean): void => {
+      menu.hidden = !open
+      toggle.setAttribute('aria-expanded', String(open))
+    }
+    toggle.addEventListener('click', () => set(menu.hidden === true))
+    root.addEventListener('mouseenter', () => set(true))
+    root.addEventListener('mouseleave', () => set(false))
+    root.addEventListener('focusout', (e) => {
+      if (!root.contains(e.relatedTarget as Node | null)) set(false)
+    })
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') set(false)
+    })
+  })
+}
+
+/* ------------------------------------------------------------------
+   Resources hub — type tabs + search, state mirrored in ?type= & ?q=
+   ------------------------------------------------------------------ */
+function initResources(): void {
+  const grid = document.querySelector<HTMLElement>('[data-resource-grid]')
+  if (!grid) return
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-resource-tabs] [data-type]'))
+  const search = document.querySelector<HTMLInputElement>('[data-resource-search]')!
+  const empty = document.querySelector<HTMLElement>('[data-resource-empty]')!
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-card]'))
+  let type = 'all'
+
+  const apply = (): void => {
+    const q = search.value.trim().toLowerCase()
+    let shown = 0
+    cards.forEach((card) => {
+      const ok = (type === 'all' || card.dataset.type === type) && (!q || (card.dataset.search ?? '').includes(q))
+      card.hidden = !ok
+      if (ok) shown++
+    })
+    empty.hidden = shown > 0
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.type === type)))
+    const url = new URL(location.href)
+    type === 'all' ? url.searchParams.delete('type') : url.searchParams.set('type', type)
+    q ? url.searchParams.set('q', q) : url.searchParams.delete('q')
+    history.replaceState(null, '', url)
+  }
+
+  tabs.forEach((t) => t.addEventListener('click', () => { type = t.dataset.type!; apply() }))
+  document.querySelectorAll<HTMLAnchorElement>('[data-type-link]').forEach((a) =>
+    a.addEventListener('click', () => { type = a.dataset.typeLink!; apply() }),
+  )
+  search.addEventListener('input', apply)
+
+  const params = new URLSearchParams(location.search)
+  const t = params.get('type')
+  if (t && tabs.some((b) => b.dataset.type === t)) type = t
+  search.value = params.get('q') ?? ''
+  apply()
+}
+
+/* Article page: native share, clipboard fallback */
+function initShare(): void {
+  const btn = document.querySelector<HTMLButtonElement>('[data-share]')
+  if (!btn) return
+  btn.addEventListener('click', async () => {
+    const data = { title: document.title, url: location.href }
+    try {
+      if (navigator.share) await navigator.share(data)
+      else {
+        await navigator.clipboard.writeText(location.href)
+        const label = btn.textContent
+        btn.textContent = 'Link copied'
+        setTimeout(() => (btn.textContent = label), 1600)
+      }
+    } catch { /* user cancelled */ }
+  })
+}
+
 initMobileNav()
 initTestimonialDots()
+initDropdowns()
+initResources()
+initShare()
 initActiveNav()
 initDemoForm()
 initPricing()

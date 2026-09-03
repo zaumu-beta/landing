@@ -90,8 +90,9 @@ interface Mail {
 }
 
 async function sendMail(mail: Mail): Promise<void> {
-  const token = process.env.ZEPTOMAIL_TOKEN
-  const from = process.env.ZEPTOMAIL_FROM
+  // Accept the token with or without the "Zoho-enczapikey " prefix ZeptoMail shows on its Setup page.
+  const token = (process.env.ZEPTOMAIL_TOKEN ?? '').trim().replace(/^Zoho-enczapikey\s+/i, '')
+  const from = (process.env.ZEPTOMAIL_FROM ?? '').trim()
   if (!token || !from) throw new Error('ZEPTOMAIL_TOKEN / ZEPTOMAIL_FROM are not configured')
 
   const res = await fetch(process.env.ZEPTOMAIL_API_URL ?? 'https://api.zeptomail.com/v1.1/email', {
@@ -113,7 +114,7 @@ async function sendMail(mail: Mail): Promise<void> {
 
   if (!res.ok) {
     const detail = await res.text().catch(() => '')
-    throw new Error(`ZeptoMail ${res.status}: ${detail.slice(0, 500)}`)
+    throw new Error(`ZeptoMail ${res.status} ${res.statusText} (${res.headers.get('content-type') ?? 'no content-type'}): ${detail.slice(0, 500) || '<empty body>'}`)
   }
 }
 

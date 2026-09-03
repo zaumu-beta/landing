@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "content": "node scripts/content.mjs",
+    "dev": "npm run content && vite",
+    "build": "npm run content && tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@types/node": "^26.4.1",
+    "marked": "^18.0.11",
     "playwright": "^1.62.1",
     "typescript": "~6.0.2",
     "vite": "^8.2.0"

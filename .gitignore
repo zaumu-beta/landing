@@ -28,3 +28,7 @@ dist-ssr
 .env.*
 !.env.example
 .vercel
+
+# Generated from content/*.md by scripts/content.mjs
+/resources.html
+/resources/
