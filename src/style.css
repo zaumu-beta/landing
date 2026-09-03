@@ -49,3 +49,36 @@
     -webkit-font-smoothing: antialiased;
   }
 }
+
+/* ---------------------------------------------------------------
+   Brush / scribble accents (see /public/brush and ../brush-svgs)
+   Painted with `background` through an SVG mask, so any colour works.
+   --------------------------------------------------------------- */
+@layer components {
+  .scribble {
+    display: block;
+    background: currentColor;
+    -webkit-mask: var(--scribble) center / contain no-repeat;
+            mask: var(--scribble) center / contain no-repeat;
+  }
+  .scribble-underline   { --scribble: url(/brush/underline-scribble.svg); aspect-ratio: 270 / 60; }
+  .scribble-double      { --scribble: url(/brush/double-underline.svg);   aspect-ratio: 240 / 44; }
+  .scribble-circle      { --scribble: url(/brush/circle-scribble.svg);    aspect-ratio: 300 / 140; }
+  .scribble-arrow       { --scribble: url(/brush/arrow-scribble.svg);     aspect-ratio: 210 / 80; }
+  .scribble-zigzag      { --scribble: url(/brush/zigzag-scribble.svg);    aspect-ratio: 390 / 340; }
+  .scribble-swoosh      { --scribble: url(/brush/swoosh.svg);             aspect-ratio: 620 / 220; }
+  .scribble-wave        { --scribble: url(/brush/wave-squiggle.svg);      aspect-ratio: 800 / 260; }
+  .scribble-slashes     { --scribble: url(/brush/diagonal-slashes.svg);   aspect-ratio: 540 / 320; }
+  .scribble-smudge      { --scribble: url(/brush/paint-smudge.svg);       aspect-ratio: 360 / 200; }
+  .scribble-ring        { --scribble: url(/brush/brush-ring.svg);         aspect-ratio: 1; }
+  .scribble-highlight   { --scribble: url(/brush/highlighter-smear.svg);  aspect-ratio: 380 / 104; }
+
+  /* Word with a lime scribble underneath — <span class="underlined">Next</span> */
+  .underlined { position: relative; display: inline-block; isolation: isolate; }
+  .underlined::after {
+    content: ""; position: absolute; z-index: -1; left: -0.05em; right: -0.05em; bottom: -0.12em; height: 0.42em;
+    background: var(--color-brand);
+    -webkit-mask: url(/brush/underline-scribble.svg) center / 100% 100% no-repeat;
+            mask: url(/brush/underline-scribble.svg) center / 100% 100% no-repeat;
+  }
+}

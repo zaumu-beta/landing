@@ -1,0 +1,55 @@
+<header class="sticky top-0 z-50 w-full border-b border-black/5 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 lg:h-24 lg:px-[85px]">
+        <a href="/" class="flex shrink-0 items-center" aria-label="Zaumu home">
+          <img src="/logo-black.png" alt="Zaumu — create, connect, collaborate" width="440" height="214" class="h-10 w-auto lg:h-[46px]" />
+        </a>
+
+        <ul class="hidden items-center gap-8 text-[14px] font-semibold lg:flex xl:gap-11">
+          <li><a href="/#creators" data-nav="creators" class="transition hover:opacity-60">Creators</a></li>
+          <li><a href="/#brands" class="transition hover:opacity-60">Brands</a></li>
+          <li><a href="/#how-it-works" class="transition hover:opacity-60">How it Works</a></li>
+          <li><a href="/pricing.html" data-nav="pricing" class="transition hover:opacity-60">Pricing</a></li>
+          <li>
+            <button type="button" class="flex items-center gap-1.5 transition hover:opacity-60" aria-expanded="false">
+              Resources
+              <svg class="size-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+
+        <div class="hidden items-center gap-7 lg:flex">
+          <a href="#signin" class="text-[14px] font-semibold transition hover:opacity-60">Sign In</a>
+          <a href="/demo.html" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Request a Demo</a>
+        </div>
+
+        <button
+          type="button"
+          data-nav-toggle
+          class="flex size-10 items-center justify-center rounded-lg transition hover:bg-black/5 lg:hidden"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path data-nav-icon-open d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path data-nav-icon-close class="hidden" d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu" data-nav-menu class="hidden border-t border-black/5 bg-white lg:hidden">
+        <ul class="flex flex-col px-6 py-4 text-[15px] font-semibold">
+          <li><a href="/#creators" data-nav="creators" class="block py-3">Creators</a></li>
+          <li><a href="/#brands" class="block py-3">Brands</a></li>
+          <li><a href="/#how-it-works" class="block py-3">How it Works</a></li>
+          <li><a href="/pricing.html" data-nav="pricing" class="block py-3">Pricing</a></li>
+          <li><a href="#resources" class="block py-3">Resources</a></li>
+        </ul>
+        <div class="flex items-center gap-3 border-t border-black/5 px-6 py-4">
+          <a href="#signin" class="flex-1 rounded-[8px] border border-black/20 py-3 text-center text-[14px] font-semibold">Sign In</a>
+          <a href="/demo.html" class="flex-1 rounded-[8px] bg-brand py-3 text-center text-[14px] font-semibold">Request a Demo</a>
+        </div>
+      </div>
+    </header>

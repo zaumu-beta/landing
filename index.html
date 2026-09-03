@@ -29,67 +29,13 @@
     <!-- ==============================================================
          NAV  (PSD group "Nav Bar")
          ============================================================== -->
-    <header class="sticky top-0 z-50 w-full border-b border-black/5 bg-white/95 backdrop-blur">
-      <nav class="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 lg:h-24 lg:px-[85px]">
-        <a href="#" class="flex shrink-0 items-center" aria-label="Zaumu home">
-          <img src="/logo-black.png" alt="Zaumu — create, connect, collaborate" width="440" height="214" class="h-10 w-auto lg:h-[46px]" />
-        </a>
-
-        <ul class="hidden items-center gap-8 text-[14px] font-semibold lg:flex xl:gap-11">
-          <li><a href="#creators" class="text-brand transition hover:opacity-70">Creators</a></li>
-          <li><a href="#brands" class="transition hover:opacity-60">Brands</a></li>
-          <li><a href="#how-it-works" class="transition hover:opacity-60">How it Works</a></li>
-          <li><a href="#pricing" class="transition hover:opacity-60">Pricing</a></li>
-          <li>
-            <button type="button" class="flex items-center gap-1.5 transition hover:opacity-60" aria-expanded="false">
-              Resources
-              <svg class="size-3" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          </li>
-        </ul>
-
-        <div class="hidden items-center gap-7 lg:flex">
-          <a href="#signin" class="text-[14px] font-semibold transition hover:opacity-60">Sign In</a>
-          <a href="#join" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Join Free</a>
-        </div>
-
-        <button
-          type="button"
-          data-nav-toggle
-          class="flex size-10 items-center justify-center rounded-lg transition hover:bg-black/5 lg:hidden"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path data-nav-icon-open d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            <path data-nav-icon-close class="hidden" d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </button>
-      </nav>
-
-      <div id="mobile-menu" data-nav-menu class="hidden border-t border-black/5 bg-white lg:hidden">
-        <ul class="flex flex-col px-6 py-4 text-[15px] font-semibold">
-          <li><a href="#creators" class="block py-3 text-brand">Creators</a></li>
-          <li><a href="#brands" class="block py-3">Brands</a></li>
-          <li><a href="#how-it-works" class="block py-3">How it Works</a></li>
-          <li><a href="#pricing" class="block py-3">Pricing</a></li>
-          <li><a href="#resources" class="block py-3">Resources</a></li>
-        </ul>
-        <div class="flex items-center gap-3 border-t border-black/5 px-6 py-4">
-          <a href="#signin" class="flex-1 rounded-[8px] border border-black/20 py-3 text-center text-[14px] font-semibold">Sign In</a>
-          <a href="#join" class="flex-1 rounded-[8px] bg-brand py-3 text-center text-[14px] font-semibold">Join Free</a>
-        </div>
-      </div>
-    </header>
+    <!--@include header-->
 
     <main>
       <!-- ============================================================
            HERO  (PSD group "Section 1")
            ============================================================ -->
-      <section id="creators" class="bg-white">
+      <section id="creators" class="bg-white" data-page="creators">
         <div class="mx-auto grid max-w-[1440px] items-center gap-12 px-6 py-14 lg:grid-cols-[minmax(0,620px)_minmax(0,1fr)] lg:gap-10 lg:px-[78px] lg:py-[55px]">
           <div>
             <h1 class="text-[34px] font-bold leading-[1.2] sm:text-[42px] lg:whitespace-nowrap lg:text-[50px] lg:leading-[60px]">
@@ -108,7 +54,7 @@
             </p>
 
             <div class="mt-9 flex flex-wrap items-center gap-4 lg:mt-11 lg:gap-6">
-              <a href="#join" class="rounded-[8px] bg-brand px-9 py-4 text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
+              <a href="/demo.html?for=creator" class="rounded-[8px] bg-brand px-9 py-4 text-[14px] font-semibold text-black transition hover:brightness-95">Join as a Creator</a>
               <a href="#brands" class="rounded-[8px] border border-black bg-white px-9 py-4 text-[14px] font-semibold text-black transition hover:bg-black/5">I'm a Brand</a>
             </div>
 
@@ -309,7 +255,7 @@
               management and real-time performance tracking all in one place.
             </p>
             <div class="mt-8 flex flex-wrap gap-4">
-              <a href="#demo" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Request Demo</a>
+              <a href="/demo.html" class="rounded-[8px] bg-brand px-7 py-3.5 text-[14px] font-semibold text-black transition hover:brightness-95">Request Demo</a>
               <a href="#learn" class="rounded-[8px] border border-white/40 px-7 py-3.5 text-[14px] font-semibold text-[#fefefe] transition hover:bg-white/10">Learn More</a>
             </div>
           </div>
@@ -331,7 +277,7 @@
                 <p class="text-[9.7px] font-semibold tracking-[-0.3px]">FOR CREATORS</p>
                 <h3 class="mt-2.5 text-[20px] font-extrabold tracking-[-0.5px] lg:text-[23.117px]">Join for Free</h3>
                 <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">Build your profile, get discovered and grow your creative career.</p>
-                <a href="#signup" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-brand px-5 py-2.5 text-[12.452px] font-semibold text-black transition hover:brightness-95">Join as a Creator <span class="font-bold">&gt;</span></a>
+                <a href="/demo.html?for=creator" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-brand px-5 py-2.5 text-[12.452px] font-semibold text-black transition hover:brightness-95">Join as a Creator <span class="font-bold">&gt;</span></a>
               </div>
               <img src="/assets/cta-creator.png" alt="" width="211" height="172" class="absolute bottom-0 right-6 hidden h-[calc(100%-10px)] w-auto object-contain object-bottom sm:block" loading="lazy" />
             </div>
@@ -341,7 +287,7 @@
                 <p class="text-[9.7px] font-semibold tracking-[-0.3px]">FOR BRANDS</p>
                 <h3 class="mt-2.5 text-[20px] font-extrabold tracking-[-0.5px] lg:text-[23.117px]">Find the Right Creators</h3>
                 <p class="mt-2 text-[11.667px] font-medium leading-[16.667px]">Get access to Africa's top creators and run impactful campaigns.</p>
-                <a href="#demo" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-violet px-5 py-2.5 text-[12.452px] font-semibold text-white transition hover:brightness-110">Request Demo <span class="font-bold">&gt;</span></a>
+                <a href="/demo.html" class="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-violet px-5 py-2.5 text-[12.452px] font-semibold text-white transition hover:brightness-110">Request Demo <span class="font-bold">&gt;</span></a>
               </div>
               <img src="/assets/cta-brand.png" alt="" width="211" height="186" class="absolute bottom-0 right-6 hidden h-[calc(100%-10px)] w-auto object-contain object-bottom sm:block" loading="lazy" />
             </div>
@@ -354,59 +300,6 @@
          FOOTER  (PSD group "Section 9" — the PSD flattens the link
          columns into one image, so they are rebuilt as real markup)
          ============================================================== -->
-    <footer class="bg-footer text-white">
-      <div class="mx-auto max-w-[1440px] px-6 py-12 lg:px-[113px] lg:py-[26px]">
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,240px)_repeat(3,minmax(0,1fr))_minmax(0,220px)] lg:gap-8">
-          <div>
-            <img src="/logo-white.png" alt="Zaumu" width="329" height="162" class="h-10 w-auto" loading="lazy" />
-            <p class="mt-4 max-w-[200px] text-[12px] leading-[18px] text-white/65">The creator-first marketplace connecting Africa's talent with global opportunities.</p>
-          </div>
-
-          <div>
-            <h3 class="text-[13px] font-bold">Platform</h3>
-            <ul class="mt-4 space-y-2.5 text-[12px] text-white/65">
-              <li><a href="#creators" class="transition hover:text-white">Creators</a></li>
-              <li><a href="#brands" class="transition hover:text-white">Brands</a></li>
-              <li><a href="#how-it-works" class="transition hover:text-white">How it Works</a></li>
-              <li><a href="#pricing" class="transition hover:text-white">Pricing</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-[13px] font-bold">Resources</h3>
-            <ul class="mt-4 space-y-2.5 text-[12px] text-white/65">
-              <li><a href="#blog" class="transition hover:text-white">Blog</a></li>
-              <li><a href="#help" class="transition hover:text-white">Help Centre</a></li>
-              <li><a href="#guides" class="transition hover:text-white">Guides</a></li>
-              <li><a href="#contact" class="transition hover:text-white">Contact</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-[13px] font-bold">Company</h3>
-            <ul class="mt-4 space-y-2.5 text-[12px] text-white/65">
-              <li><a href="#about" class="transition hover:text-white">About Us</a></li>
-              <li><a href="#careers" class="transition hover:text-white">Careers</a></li>
-              <li><a href="#privacy" class="transition hover:text-white">Privacy Policy</a></li>
-              <li><a href="#terms" class="transition hover:text-white">Terms of Service</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-[13px] font-bold">Follow Us</h3>
-            <ul class="mt-4 flex flex-wrap gap-2">
-              <li><a href="#instagram" aria-label="Instagram" class="block transition hover:opacity-75"><img src="/icons/socials/Instagram.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
-              <li><a href="#tiktok" aria-label="TikTok" class="block transition hover:opacity-75"><img src="/icons/socials/Tiktok.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
-              <li><a href="#x" aria-label="X" class="block transition hover:opacity-75"><img src="/icons/socials/X.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
-              <li><a href="#linkedin" aria-label="LinkedIn" class="block transition hover:opacity-75"><img src="/icons/socials/linkedin.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
-              <li><a href="#youtube" aria-label="YouTube" class="block transition hover:opacity-75"><img src="/icons/socials/Youtube.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
-              <li><a href="#facebook" aria-label="Facebook" class="block transition hover:opacity-75"><img src="/icons/socials/Facebook.svg" alt="" width="28" height="28" class="size-7" loading="lazy" /></a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="mt-10 border-t border-white/10 pt-5 text-right text-[11px] text-white/50">© 2025 Zaumu. All rights reserved.</div>
-      </div>
-    </footer>
+    <!--@include footer-->
   </body>
 </html>

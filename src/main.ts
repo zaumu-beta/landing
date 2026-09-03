@@ -79,5 +79,151 @@ function initTestimonialDots(): void {
   })
 }
 
+/* ------------------------------------------------------------------
+   Active nav link — driven by <body data-page="…">
+   ------------------------------------------------------------------ */
+function initActiveNav(): void {
+  const page = document.body.dataset.page
+  if (!page) return
+  document.querySelectorAll<HTMLAnchorElement>(`[data-nav="${page}"]`).forEach((a) => {
+    a.classList.add('text-brand')
+    a.setAttribute('aria-current', 'page')
+  })
+}
+
+/* ------------------------------------------------------------------
+   Audience switch (demo page) — every [data-audience] element shows
+   only for the chosen audience. Initial value comes from ?for=creator.
+   ------------------------------------------------------------------ */
+type Audience = 'brand' | 'creator'
+
+function setAudience(audience: Audience): void {
+  document.querySelectorAll<HTMLElement>('[data-audience]').forEach((el) => {
+    el.hidden = el.dataset.audience !== audience
+  })
+  document.querySelectorAll<HTMLButtonElement>('[data-audience-tab]').forEach((tab) => {
+    tab.setAttribute('aria-selected', String(tab.dataset.audienceTab === audience))
+  })
+  const url = new URL(window.location.href)
+  if (audience === 'creator') url.searchParams.set('for', 'creator')
+  else url.searchParams.delete('for')
+  history.replaceState(null, '', url)
+}
+
+/* ------------------------------------------------------------------
+   Demo request form — single step + done state. No backend yet: the
+   submit handler is where the POST to /api/demo goes.
+   ------------------------------------------------------------------ */
+function initDemoForm(): void {
+  const form = document.querySelector<HTMLFormElement>('[data-demo-form]')
+  if (!form) return
+
+  const fields = form.querySelector<HTMLFieldSetElement>('[data-step="1"]')!
+  const done = form.querySelector<HTMLElement>('[data-step="done"]')!
+  const submit = form.querySelector<HTMLButtonElement>('[data-submit]')!
+  const email = form.elements.namedItem('email') as HTMLInputElement
+  const emailError = form.querySelector<HTMLElement>('[data-error="email"]')!
+
+  const audience = (): Audience =>
+    new URLSearchParams(location.search).get('for') === 'creator' ? 'creator' : 'brand'
+
+  const isVisible = (el: Element): boolean => !el.closest<HTMLElement>('[data-audience]')?.hidden
+
+  const validate = (): boolean => {
+    const required = Array.from(fields.querySelectorAll<HTMLInputElement | HTMLSelectElement>('input[required], select'))
+      .filter(isVisible)
+    let ok = required.every((el) => el.value.trim() !== '' && (el.type !== 'email' || el.checkValidity()))
+    if (audience() === 'brand') {
+      ok = ok && fields.querySelectorAll('input[name="goals"]:checked').length > 0
+    }
+    submit.disabled = !ok
+    return ok
+  }
+
+  setAudience(audience())
+  form.querySelectorAll<HTMLButtonElement>('[data-audience-tab]').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      setAudience(tab.dataset.audienceTab as Audience)
+      validate()
+    })
+  })
+
+  fields.addEventListener('input', validate)
+  fields.addEventListener('change', validate)
+  email.addEventListener('blur', () => {
+    emailError.classList.toggle('hidden', email.value === '' || email.checkValidity())
+  })
+
+  const formError = form.querySelector<HTMLElement>('[data-error="form"]')!
+  const submitLabel = submit.innerHTML
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    if (!validate()) return
+
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
+    data.audience = audience()
+    data.goals = Array.from(form.querySelectorAll<HTMLInputElement>('input[name="goals"]:checked')).map((c) => c.value).join(',')
+    data.page = location.href
+
+    submit.disabled = true
+    submit.textContent = 'Sending…'
+    formError.hidden = true
+
+    try {
+      const res = await fetch('/api/demo', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      const result = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string }
+      if (!res.ok || !result.ok) throw new Error(result.error || 'Something went wrong. Please try again.')
+
+      fields.hidden = true
+      done.hidden = false
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } catch (err) {
+      formError.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.'
+      formError.hidden = false
+    } finally {
+      submit.innerHTML = submitLabel
+      setAudience(audience())
+      validate()
+    }
+  })
+}
+
+/* ------------------------------------------------------------------
+   Pricing page — brand/creator tabs and monthly/annual toggle
+   ------------------------------------------------------------------ */
+function initPricing(): void {
+  const tabs = document.querySelectorAll<HTMLButtonElement>('[data-pricing-tab]')
+  if (tabs.length === 0) return
+
+  const select = (which: string): void => {
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.pricingTab === which)))
+    document.querySelectorAll<HTMLElement>('[data-pricing-panel]').forEach((p) => {
+      p.hidden = p.dataset.pricingPanel !== which
+    })
+  }
+  tabs.forEach((t) => t.addEventListener('click', () => select(t.dataset.pricingTab!)))
+  if (new URLSearchParams(location.search).get('for') === 'creator') select('creators')
+
+  const toggle = document.querySelector<HTMLButtonElement>('[data-billing-toggle]')
+  const knob = document.querySelector<HTMLElement>('[data-billing-knob]')
+  if (!toggle || !knob) return
+  toggle.addEventListener('click', () => {
+    const annual = toggle.getAttribute('aria-checked') !== 'true'
+    toggle.setAttribute('aria-checked', String(annual))
+    knob.style.transform = annual ? 'translateX(20px)' : 'translateX(0)'
+    document.querySelectorAll<HTMLElement>('[data-price]').forEach((p) => {
+      p.textContent = annual ? p.dataset.annual! : p.dataset.monthly!
+    })
+  })
+}
+
 initMobileNav()
 initTestimonialDots()
+initActiveNav()
+initDemoForm()
+initPricing()
